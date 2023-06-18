@@ -5,7 +5,9 @@ import {getSidebar} from './config/siderbar'
 import {getNav} from './config/nav'
 
 export default defineConfig({
+    base: '/mist-vue/',
     title: 'Mist-Vue',
+    outDir: '../dist',
     vite: {
         plugins: [
             vueJsxPlugin(),
