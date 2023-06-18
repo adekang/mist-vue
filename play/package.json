@@ -1,0 +1,16 @@
+{
+  "name": "play",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --port=3000"
+  },
+  "keywords": [],
+  "author": "adekang",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.3.9"
+  }
+}
