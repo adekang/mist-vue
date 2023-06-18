@@ -16,9 +16,15 @@ importers:
 
   docs: {}
 
-  packages: {}
+  packages/components: {}
+
+  packages/utils: {}
 
   play:
+    dependencies:
+      '@mist-vue/components':
+        specifier: workspace:^
+        version: link:../packages/components
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^4.2.3
