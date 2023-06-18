@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "docs:dev": "pnpm run --filter ./site docs:dev",
+    "docs:build": "pnpm run --filter ./site docs:build",
+    "docs:serve": "pnpm run --filter ./site docs:serve",
     "build:mist": "gulp -f packages/components/script/build/index.ts",
     "publish:mist": "gulp -f packages/components/script/publish/index.ts"
   },

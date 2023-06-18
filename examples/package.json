@@ -1,12 +1,12 @@
 {
-  "name": "play",
+  "name": "examples",
   "version": "0.0.38",
-  "description": "",
+  "description": "这是一个组件开发演示文档",
   "main": "index.js",
   "scripts": {
     "dev": "vite --port=3000"
   },
-  "keywords": [],
+  "keywords": ["examples","vue"],
   "author": "adekang",
   "license": "ISC",
   "devDependencies": {
