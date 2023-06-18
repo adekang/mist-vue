@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "adekang",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@mist-vue/utils": "workspace:^"
+  }
 }

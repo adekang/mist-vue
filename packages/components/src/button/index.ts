@@ -1,19 +1,8 @@
 import _Button from "./button.vue";
-import type { App, Plugin } from "vue";
+import { withInstall } from "@mist-vue/utils";
 
-type SFCWithInstall<T> = T & Plugin;
 
 // app.use 注册
-const withInstall = <T>(comp: T) => {
-  (comp as SFCWithInstall<T>).install = (app: App) => {
-    const name = (comp as any).name;
-    //注册组件
-    app.component(name, comp as SFCWithInstall<T>);
-  };
-  return comp as SFCWithInstall<T>;
-};
-
-
 // 具名导出
 export const Button = withInstall(_Button);
 
