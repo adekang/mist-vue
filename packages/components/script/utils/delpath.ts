@@ -27,7 +27,7 @@ const delPath = async (path: string) => {
       }
     });
 
-    if (path !== `${pkgPath}/dist`) fs.rmdirSync(path);
+    if (path !== `${pkgPath}/mist-vue`) fs.rmdirSync(path);
   }
 };
 export default delPath;

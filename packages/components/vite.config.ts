@@ -24,7 +24,7 @@ export default defineConfig({
           preserveModules: true,
           exports: "named",
           //配置打包根目录
-          dir: "../dist/es",
+          dir: "../mist-vue/es",
         },
         {
           //打包格式
@@ -35,7 +35,7 @@ export default defineConfig({
           preserveModules: true,
           exports: "named",
           //配置打包根目录
-          dir: "../dist/lib",
+          dir: "../mist-vue/lib",
         },
       ],
     },
@@ -47,7 +47,7 @@ export default defineConfig({
     vue(),
     dts({
       entryRoot: "./src",
-      outputDir: ["../dist/es/src", "../dist/lib/src"],
+      outputDir: ["../mist-vue/es/src", "../mist-vue/lib/src"],
       //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
       tsConfigFilePath: "../../tsconfig.json",
     }),

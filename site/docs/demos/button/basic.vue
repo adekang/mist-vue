@@ -8,7 +8,7 @@ Hello World This is Test Docs block code in `button.vue`.
 </docs>
 
 <script setup lang="ts">
-import { Button } from  '@mist-vue/components'
+import { Button } from  'mist-vue'
 </script>
 
 <template>
