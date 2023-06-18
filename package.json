@@ -1,11 +1,11 @@
 {
   "name": "mist-vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp -f packages/components/script/build/index.ts",
-    "publish": "gulp -f packages/components/script/publish/index.ts"
+    "build:mist": "gulp -f packages/components/script/build/index.ts",
+    "publish:mist": "gulp -f packages/components/script/publish/index.ts"
   },
   "keywords": [],
   "author": "adekang",
