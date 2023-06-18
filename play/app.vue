@@ -5,6 +5,6 @@ import { Button } from '@mist-vue/components';
 
 <template>
   <h1>启动测试</h1>
-  <Button/>
-  <m-button />
+  <Button type="primary">测试一</Button>
+  <m-button >测试二</m-button>
 </template>
