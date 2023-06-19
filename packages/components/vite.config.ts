@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -48,6 +49,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    vueJsx(),
     dts({
       entryRoot: './src',
       outputDir: ['../mist-vue/es/src', '../mist-vue/lib/src'],
