@@ -1,4 +1,4 @@
-import { withInstall } from '@mist-vue/utils'
+import { withInstall } from '../_util'
 import _Input from './input'
 
 export const MInput = withInstall(_Input)

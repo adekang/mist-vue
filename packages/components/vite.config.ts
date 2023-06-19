@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -16,7 +15,7 @@ export default defineConfig({
     // minify: false,
     rollupOptions: {
       // 忽略打包vue文件
-      external: ['vue', /\.less/],
+      external: ['vue', /\.less/, '@mist-vue/utils'],
       input: ['index.ts'],
       output: [
         {
@@ -77,7 +76,4 @@ export default defineConfig({
     },
     DefineOptions(),
   ],
-  test: {
-    environment: 'happy-dom',
-  },
 })

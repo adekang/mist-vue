@@ -8,7 +8,7 @@
     "docs:dev": "pnpm run --filter ./site docs:dev",
     "docs:build": "pnpm run --filter ./site docs:build",
     "docs:serve": "pnpm run --filter ./site docs:serve",
-    "build:mist": "gulp -f packages/components/script/build/index.ts",
+    "build:mist": "gulp -f packages/components/script/bundle/index.ts",
     "release:mist": "bumpp -r && pnpm publish --filter ./packages/mist-vue",
     "lint": "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
     "prepare": "husky install"
