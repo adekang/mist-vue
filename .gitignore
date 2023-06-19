@@ -28,3 +28,4 @@ cache
 *.njsproj
 *.sln
 *.sw?
+coverage
