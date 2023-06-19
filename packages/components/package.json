@@ -1,6 +1,6 @@
 {
   "name": "@mist-vue/components",
-  "version": "0.0.38",
+  "version": "0.0.42",
   "description": "",
   "main": "./index.ts",
   "scripts": {
