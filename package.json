@@ -10,6 +10,7 @@
     "docs:serve": "pnpm run --filter ./site docs:serve",
     "build:mist": "gulp -f packages/components/script/bundle/index.ts",
     "release:mist": "bumpp -r && pnpm publish --filter ./packages/mist-vue",
+    "create:comp": "pnpm run --filter @mist-vue/cli cli",
     "lint": "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
     "prepare": "husky install"
   },
@@ -25,6 +26,7 @@
     "@adekang/eslint-config": "^0.39.10",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
+    "@testing-library/vue": "^7.0.0",
     "@types/gulp": "^4.0.11",
     "@types/gulp-autoprefixer": "^0.0.34",
     "@types/gulp-less": "^0.0.33",
