@@ -9,7 +9,8 @@
     "docs:build": "pnpm run --filter ./site docs:build",
     "docs:serve": "pnpm run --filter ./site docs:serve",
     "build:mist": "gulp -f packages/components/script/build/index.ts",
-    "publish:mist": "gulp -f packages/components/script/publish/index.ts"
+    "publish:mist": "gulp -f packages/components/script/publish/index.ts",
+    "release:mist": "bumpp -r && pnpm publish --filter ./packages/mist-vue"
   },
   "keywords": [],
   "author": "adekang",
@@ -21,6 +22,7 @@
     "@types/node": "^20.3.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/runtime-core": "^3.3.4",
+    "bumpp": "^9.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-less": "^5.0.0",
