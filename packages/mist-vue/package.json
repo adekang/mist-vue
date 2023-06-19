@@ -16,10 +16,6 @@
   "author": "adekang",
   "license": "MIT",
   "typings": "lib/index.d.ts",
-  "scripts": {
-    "release": "bumpp -r && pnpm  publish",
-    "release-it": "release-it"
-  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

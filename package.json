@@ -9,7 +9,6 @@
     "docs:build": "pnpm run --filter ./site docs:build",
     "docs:serve": "pnpm run --filter ./site docs:serve",
     "build:mist": "gulp -f packages/components/script/build/index.ts",
-    "publish:mist": "gulp -f packages/components/script/publish/index.ts",
     "release:mist": "bumpp -r && pnpm publish --filter ./packages/mist-vue"
   },
   "keywords": [],
