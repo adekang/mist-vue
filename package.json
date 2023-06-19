@@ -14,7 +14,9 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jsx,tsx,ts,vue}": "pnpm lint"
+    "*.{js,jsx,tsx,ts,vue}": [
+      "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./"
+    ]
   },
   "keywords": [],
   "author": "adekang",
