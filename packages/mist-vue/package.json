@@ -1,6 +1,6 @@
 {
   "name": "mist-vue",
-  "version": "0.0.41-beta.3",
+  "version": "0.0.41-beta.4",
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "files": [
@@ -17,7 +17,7 @@
   "license": "MIT",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "release": "bumpp -r && pnpm  publish",
+    "release": "bumpp -r && pnpm publish",
     "release-it": "release-it"
   },
   "publishConfig": {

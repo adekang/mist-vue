@@ -1,6 +1,6 @@
 {
   "name": "mist-vue-demo",
-  "version": "0.0.38",
+  "version": "0.0.41-beta.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "docs:serve": "pnpm run --filter ./site docs:serve",
     "build:mist": "gulp -f packages/components/script/build/index.ts",
     "publish:mist": "gulp -f packages/components/script/publish/index.ts",
-    "publish:release": "pnpm run --filter ./packages/mist-vue release"
+    "publish:release": "pnpm run --filter ./packages/mist-vue release",
+    "release:mist": "bumpp -r && pnpm publish --filter ./packages/mist-vue"
   },
   "keywords": [],
   "author": "adekang",
