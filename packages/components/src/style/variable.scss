@@ -1,0 +1,49 @@
+// 变量
+// 定义主题变量
+$m-border-radius: var(--m-border-radius, 2px); //一般圆角
+
+$m-animation-duration-slow: var(--m-animation-duration-slow, 300ms);
+$m-animation-ease-in-out-smooth: var(--m-animation-ease-in-out-smooth,
+        cubic-bezier(0.645, 0.045, 0.355, 1));
+$m-light-text: var(--m-light-text, #ffffff); // 有色深色背景下字体颜色（固定）
+
+$m-text: var(--m-text, #252b3a); // 正文文本
+$m-block: var(--m-block,
+        #ffffff); // 大面积的不可折叠区块的背景色（例如顶部导航背景色）
+$m-line: var(--m-line, #adb0b8); // 边框分割线，仅用于边框
+$m-form-control-line-active: var(--m-form-control-line-active,
+        #5e7ce0); // 表单控件边框激活色，用于获得焦点
+$m-brand-active: var(--m-brand-active, #526ecc); // 品牌色激活色（加深）
+$m-brand-active-focus: var(--m-brand-active-focus,
+        #344899); // 品牌色焦点色（重度加深）
+
+// bg
+$m-bg: var(--m-bg, #f5f6fa); // 背景色
+$m-bg-light: var(--m-bg-light, #ffffff); // 有色浅色背景
+$m-bg-dark: var(--m-bg-dark, #252b3a); // 有色深色背景
+$m-bg-disabled: var(--m-bg-disabled, #f5f6fa); // 禁用背景色
+
+
+
+// font-size
+$m-font-size-sm: var(--m-font-size-md, 13px); //当组件size为''时使用此字号大小
+$m-font-size-md: var(--m-font-size-md, 14px); //当组件size为''时使用此字号大小
+$m-font-size-lg: var(--m-font-size-md, 18px); //当组件size为''时使用此字号大小
+
+// border-radius
+$m-border-radius: var(--m-border-radius, 2px); //一般圆角
+
+// font-color
+$m-font-color: var(--m-font-color, #252b3a); // 正文文本
+$m-font-color-light: var(--m-font-color-light, #ffffff); // 有色深色背景下字体颜色（固定）
+$m-font-color-disabled: var(--m-font-color-disabled, #adb0b8); // 禁用文本
+
+
+// primary
+$m-primary: var(--m-primary, #5e7ce0); // 主要按钮，同品牌色
+$m-primary-hover: var(--m-primary-hover, #7693f5); // 主要按钮悬停
+$m-primary-active: var(--m-primary-active, #344899); // 主要按钮激活
+$m-primary-disabled: var(--m-primary-disabled, #a0cfff); // 主要禁用激活
+
+//  warning
+$m-warning: var(--m-color-warning, #e6a23c); // 主要按钮，同品牌色

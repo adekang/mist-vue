@@ -1,0 +1,70 @@
+@import '../../style/variable.scss';
+
+@mixin button-base {
+  // 布局
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  // 元素
+  border: 1px solid transparent;
+  height: 28px;
+  padding: 0 20px;
+  background-color: transparent;
+  border-radius: $m-border-radius;
+  // 文本属性
+  white-space: nowrap;
+  text-align: center;
+  outline: 0;
+  cursor: pointer;
+  line-height: 1.5;
+  // 文字样式
+  font-size: $m-font-size-md;
+  // 其他样式
+  transition: all .3s cubic-bezier(.645, .045, .355, 1);
+  user-select: none;
+  touch-action: manipulation;
+
+  // 禁用样式  &[disabled] 有这样的属性的时候
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &.m-btn--block {
+    display: block;
+    width: 100%;
+  }
+}
+
+// 变体
+@mixin button-variant($variant, $pseudo: false) {
+
+  @each $key,
+  $value in $variant {
+
+    // 第一层是多态的类型
+    &.m-btn--#{$key} {
+
+      @each $item-key,
+      $item-value in $value {
+
+        // 第二层是多态类型下的样式
+        @if $pseudo {
+
+          // 如果是伪类就继续第三层
+          &:#{$item-key} {
+
+            @each $sub-item-key,
+            $sub-item-value in $item-value {
+              // 第三层是伪类的样式
+              #{$sub-item-key}: $sub-item-value;
+            }
+          }
+        } @else {
+          // 不是伪类就直接设置样式
+          #{$item-key}: $item-value;
+        }
+      }
+    }
+  }
+}

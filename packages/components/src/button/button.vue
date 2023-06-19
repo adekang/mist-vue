@@ -1,21 +1,18 @@
 <script lang="ts" setup>
-import './style/index.scss'
+import './style/button.scss'
 import { computed } from 'vue'
+import { buttonProps } from './button-types'
 
 defineOptions({ name: 'MButton' })
-const buttonProps = defineProps<ButtonProps>()
-
-interface ButtonProps {
-  type?: string
-}
+const props = defineProps(buttonProps)
 
 const buttonStyle = computed(() => {
-  return { [`m-button--${buttonProps.type}`]: buttonProps.type }
+  return { [`m-btn--${props.type}`]: props.type }
 })
 </script>
 
 <template>
-  <button class="m-button" :class="buttonStyle">
+  <button class="m-btn" :class="buttonStyle">
     <slot />
   </button>
 </template>

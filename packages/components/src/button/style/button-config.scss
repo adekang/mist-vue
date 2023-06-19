@@ -1,0 +1,71 @@
+// 所有不同type按钮自定义样式
+@import '../../style/variable.scss';
+
+// 按钮类型的配置
+$type: (
+        primary: (
+                color: $m-light-text,
+                background-color: $m-primary,
+        ),
+        warning: (
+                color: $m-text,
+                background-color: $m-warning,
+                border-color: $m-line,
+        ),
+        text: (
+                padding: 0,
+                color: $m-brand-active,
+        ),
+);
+
+// 伪类的配置
+$pseudo: (
+        primary:(
+                hover: (background-color: $m-primary-hover,),
+                focus: (background-color: $m-primary-hover,),
+                active: (background-color: $m-primary-active,),
+                disabled: (background-color: $m-primary-disabled,
+                        color:$m-light-text,
+                        border:none,)
+        ),
+        warning: (
+                hover: (border-color: $m-form-control-line-active,
+                        color: $m-brand-active,
+                ),
+                focus: (
+                        border-color: $m-form-control-line-active,
+                        color: $m-brand-active,
+                ),
+                active: (
+                        border-color: $m-form-control-line-active,
+                        color: $m-brand-active,
+                ),
+                disabled: (
+                        background-color: $m-primary-disabled,
+                        color:$m-light-text,
+                        border:none,
+                )
+        ),
+        text: (
+                hover: (color: $m-brand-active-focus,),
+                focus: (color: $m-brand-active-focus,),
+                active: (color: $m-brand-active-focus,),
+                disabled: (color:$m-font-color-disabled)
+        ),
+);
+
+// 按钮尺寸
+$size: (
+        small: (height: 24px,
+                padding: 0 16px,
+                font-size: $m-font-size-sm,
+        ),
+        medium: (height: 28px,
+                padding: 0 20px,
+                font-size: $m-font-size-md,
+        ),
+        large: (height: 32px,
+                padding: 0 24px,
+                font-size: $m-font-size-lg,
+        ),
+);
