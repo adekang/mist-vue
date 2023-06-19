@@ -1,5 +1,6 @@
 import { defineComponent, toRefs } from 'vue'
 import { inputProps } from './input-types'
+import './style/index.scss'
 
 export default defineComponent({
   name: 'MInput',

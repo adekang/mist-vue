@@ -15,7 +15,7 @@ export default defineConfig({
     // minify: false,
     rollupOptions: {
       // 忽略打包vue文件
-      external: ['vue', /\.less/, '@mist-vue/utils'],
+      external: ['vue', /\.less|\.scss/, '@mist-vue/utils'],
       input: ['index.ts'],
       output: [
         {
@@ -69,7 +69,7 @@ export default defineConfig({
           this.emitFile({
             type: 'asset',
             fileName: key, // 文件名名不变
-            source: bundler.code.replace(/\.less/g, '.css'),
+            source: bundler.code.replace(/\.less|\.scss/g, '.css'),
           })
         }
       },
