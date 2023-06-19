@@ -1,6 +1,6 @@
 {
   "name": "mist-vue",
-  "version": "0.0.41-beta.0",
+  "version": "0.0.41-beta.1",
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "files": [
