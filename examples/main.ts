@@ -1,9 +1,8 @@
-import { createApp } from "vue";
-import App from "./app.vue";
+import { createApp } from 'vue'
+import Mist from '@mist-vue/components'
+import App from './app.vue'
 
-import Mist from '@mist-vue/components';
-
-const app = createApp(App);
+const app = createApp(App)
 
 app.use(Mist)
-app.mount("#app");
+app.mount('#app')

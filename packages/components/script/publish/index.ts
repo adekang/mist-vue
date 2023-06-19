@@ -1,8 +1,8 @@
-import run from "../utils/run";
-import { pkgPath } from "../utils/paths";
-// @ts-ignore
-import { series } from "gulp";
-export const publishComponent = async () => {
-  await run("release-it", `${pkgPath}/mist-vue`);
-};
-export default series(async () => publishComponent());
+import { series } from 'gulp'
+import run from '../utils/run'
+import { pkgPath } from '../utils/paths'
+
+export async function publishComponent() {
+  await run('release-it', `${pkgPath}/mist-vue`)
+}
+export default series(async () => publishComponent())

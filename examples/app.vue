@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Button } from '@mist-vue/components';
-
+import { Button } from '@mist-vue/components'
 </script>
 
 <template>
