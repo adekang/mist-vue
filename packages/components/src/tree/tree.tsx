@@ -10,7 +10,7 @@ const NODE_INDENT = 24
 export default defineComponent({
   name: 'MTree',
   props: treeProps,
-  setup(props: TreeProps) {
+  setup(props: TreeProps, { slots }) {
     const { data, checkable } = toRefs(props)
     const { expandedTree, toggleNode, getChildren, toggleCheckedNOde } = useTree(data)
     return () => {
@@ -31,32 +31,34 @@ export default defineComponent({
                                 }
                                 {
                                     treeNode.isLeaf
-                                      ? <span style={{ display: 'inline-block', width: '24px' }}> </span>
-                                      : <svg
-                                            onClick={() => {
-                                              toggleNode(treeNode)
-                                            }}
-                                            style={{
-                                              width: '18px',
-                                              height: '18px',
-                                              display: 'inline-block',
-                                              transform: treeNode.expanded ? 'rotate(90deg)' : '',
-                                            }}
-                                            viewBox="0 0 1024 1024"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill="currentColor"
-                                                d="M384 192v640l384-320.064z"
-                                            ></path>
-                                        </svg>
+                                      ? <span style={{ display: 'inline-block', width: '18px' }}/>
+                                      : slots && slots.icon
+                                        ? slots.icon({ nodeData: treeNode, toggleNode })
+                                        : <svg
+                                                onClick={() => {
+                                                  toggleNode(treeNode)
+                                                }}
+                                                style={{
+                                                  width: '18px',
+                                                  height: '18px',
+                                                  display: 'inline-block',
+                                                  transform: treeNode.expanded ? 'rotate(90deg)' : '',
+                                                }}
+                                                viewBox="0 0 1024 1024"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M384 192v640l384-320.064z"
+                                                ></path>
+                                            </svg>
                                 }
                                 {/* 复选框 */}
                                 {
                                     checkable.value && <input type="checkbox" v-model={treeNode.checked}
                                                               onChange={() => toggleCheckedNOde(treeNode)}/>
                                 }
-                                {treeNode.label}
+                                {slots && slots.content ? slots.content({ nodeData: treeNode }) : treeNode.label}
                             </div>)
                         }
                     </div>

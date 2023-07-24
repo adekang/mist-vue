@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MTree } from '@mist-vue/components'
+import { MTree } from 'mist-vue'
 import { ref } from 'vue'
 
 const data = ref([
@@ -56,7 +56,6 @@ const data = ref([
 
 <template>
   <MTree :data="data" checkable>
-    11111111
     <template #icon="{ nodeData, toggleNode }">
       <span v-if="nodeData.isLeaf" class="devui-tree-node__indent" />
       <span
