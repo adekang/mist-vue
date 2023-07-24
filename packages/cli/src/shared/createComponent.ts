@@ -6,7 +6,9 @@ import genCoreTemplate from '../template/core'
 import genIndexTemplate from '../template'
 import genTestTemplate from '../template/testTemp'
 import genTypesTemplate from '../template/types'
-import { genStyleTemplate } from '../template/styleTemp'
+import genStyleTemplate from '../template/styleTemp'
+import genBaseStyleTemplate from '../template/styleBaseTemp'
+import genConfigStyleTemplate from '../template/styleConfigTemp'
 
 export interface ComponentMeta {
   name: string
@@ -46,6 +48,11 @@ export async function createComponent(meta: ComponentMeta) {
   const styleFilePath = `${styleDir}/${name}.scss`
   writeFileSync(styleFilePath, genStyleTemplate(name), WRITE_FILE_OPTIONS)
 
+  const styleBaseFilePath = `${styleDir}/${name}-base.scss`
+  writeFileSync(styleBaseFilePath, genBaseStyleTemplate(name), WRITE_FILE_OPTIONS)
+
+  const styleConfigFilePath = `${styleDir}/${name}-config.scss`
+  writeFileSync(styleConfigFilePath, genConfigStyleTemplate(), WRITE_FILE_OPTIONS)
   // 核心文件：测试文件
   const testFilePath = `${testDir}/${name}.test.ts`
   writeFileSync(testFilePath, genTestTemplate(name), WRITE_FILE_OPTIONS)
