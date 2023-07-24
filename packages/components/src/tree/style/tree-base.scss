@@ -1,0 +1,13 @@
+@mixin tree-base {
+  all: unset;
+
+  .m-tree--node {
+    position: relative;
+    line-height: 28px;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+}

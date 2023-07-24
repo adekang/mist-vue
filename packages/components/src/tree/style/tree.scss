@@ -1,4 +1,13 @@
-.m-tree {
-  /* your component style */
+@use './tree-config';
+@import './tree-base';
 
+.m-tree {
+  @include tree-base;
+
+
+  .m-tree--node_vline {
+    position: absolute;
+    width: 1px;
+    background-color: #2c2c30;
+  }
 }
