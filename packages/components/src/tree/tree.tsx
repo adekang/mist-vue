@@ -11,8 +11,8 @@ export default defineComponent({
   name: 'MTree',
   props: treeProps,
   setup(props: TreeProps) {
-    const { data } = toRefs(props)
-    const { expandedTree, toggleNode, getChildren } = useTree(data)
+    const { data, checkable } = toRefs(props)
+    const { expandedTree, toggleNode, getChildren, toggleCheckedNOde } = useTree(data)
     return () => {
       return (
                 <div class="m-tree">
@@ -51,7 +51,11 @@ export default defineComponent({
                                             ></path>
                                         </svg>
                                 }
-
+                                {/* 复选框 */}
+                                {
+                                    checkable.value && <input type="checkbox" v-model={treeNode.checked}
+                                                              onChange={() => toggleCheckedNOde(treeNode)}/>
+                                }
                                 {treeNode.label}
                             </div>)
                         }

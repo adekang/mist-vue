@@ -1,5 +1,13 @@
+<docs>
+---
+title: 带有复选框的树组件
+---
+
+请设置 `checkable` 属性为 `true`。
+</docs>
+
 <script setup lang="ts">
-import { MButton, MInput, MTree } from '@mist-vue/components'
+import { MTree } from 'mist-vue'
 import { ref } from 'vue'
 
 const data = ref([{
@@ -35,16 +43,9 @@ const data = ref([{
 </script>
 
 <template>
-  <h1>启动测试</h1>
-  <MButton type="primary">
-    测试一
-  </MButton>
-  <MButton type="warning">
-    测试二
-  </MButton>
-  <h1>input测试</h1>
-  <MInput type="number" />
-
-  <h1>MTree</h1>
-  <MTree :data="data" checkable />
+  <div>
+    <MTree :data="data" checkable />
+  </div>
 </template>
+
+<style scoped></style>
