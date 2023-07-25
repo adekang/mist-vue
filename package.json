@@ -1,6 +1,6 @@
 {
   "name": "mist-vue-demo",
-  "version": "0.0.43-beta.0",
+  "version": "0.0.43-beta.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "release:mist": "bumpp -r && pnpm publish --filter ./packages/mist-vue",
     "create:comp": "pnpm run --filter @mist-vue/cli cli",
     "lint": "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
+    "release": "pnpm build:mist && pnpm release:mist",
     "prepare": "husky install"
   },
   "lint-staged": {
