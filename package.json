@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm run --filter ./examples dev",
     "docs:dev": "pnpm run --filter ./site docs:dev",
-    "docs:build": "pnpm run --filter ./site docs:build",
+    "docs:build": "pnpm run --filter ./site docs:build && sh docs.sh",
     "docs:serve": "pnpm run --filter ./site docs:serve",
     "build:mist": "gulp -f packages/components/script/bundle/index.ts",
     "release:mist": "bumpp -r && pnpm publish --filter ./packages/mist-vue",
