@@ -24,4 +24,6 @@ export interface TreeUtils {
   getChildren: (node: MInnerTreeNode, recursive?: boolean) => MInnerTreeNode[]
   toggleCheckedNode: (node: MInnerTreeNode) => void
   getChildrenExpanded: (node: MInnerTreeNode) => MInnerTreeNode[]
+  append: (parent: MInnerTreeNode, node: MInnerTreeNode) => void
+  remove: (parent: MInnerTreeNode) => void
 }

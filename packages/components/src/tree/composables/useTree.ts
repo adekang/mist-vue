@@ -76,6 +76,53 @@ export function useTree(node: Ref<MTreeNode[]> | MTreeNode[]) {
     // 找到它后面所有的子节点(level比当前节点大)
     return result
   }
+
+  const getIndex = (node: MInnerTreeNode) => {
+    if (!node)
+      return -1
+    return innerData.value.findIndex(item => item.id === node.id)
+  }
+  const append = (parent: MInnerTreeNode, node: MInnerTreeNode) => {
+    console.log('append', parent, node)
+    const children = getChildren(parent, false)
+    const lastChild = children[children.length - 1]
+
+    let insertIndex = getIndex(parent) + 1
+    if (lastChild)
+      insertIndex = getIndex(lastChild) + 1
+
+    parent.expanded = true
+    parent.isLeaf = false
+
+    const currentNode = ref({
+      ...node,
+      level: parent.level + 1,
+      parentId: parent.id,
+      isLeaf: true,
+    })
+
+    if (currentNode.value.id === undefined)
+      currentNode.value.id = randomId()
+
+    innerData.value.splice(insertIndex, 0, currentNode.value)
+  }
+
+  function randomId() {
+    let id = ''
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+
+    for (let i = 0; i < 9; i++)
+      id += chars.charAt(Math.floor(Math.random() * chars.length))
+
+    return id
+  }
+
+  const remove = (node: MInnerTreeNode) => {
+    console.log('remove', node)
+    const childrenIds = getChildren(node).map(item => item.id)
+    innerData.value = innerData.value.filter(item => item.id !== node.id && !childrenIds.includes(item.id))
+  }
+
   return {
     innerData,
     expandedTree,
@@ -83,5 +130,7 @@ export function useTree(node: Ref<MTreeNode[]> | MTreeNode[]) {
     getChildren,
     toggleCheckedNode,
     getChildrenExpanded,
+    append,
+    remove,
   }
 }

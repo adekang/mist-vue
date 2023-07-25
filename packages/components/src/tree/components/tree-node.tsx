@@ -1,4 +1,5 @@
-import { defineComponent, inject, toRefs } from 'vue'
+import { defineComponent, inject, ref, toRefs } from 'vue'
+import type { MInnerTreeNode } from '../tree-type'
 import type { TreeNodeProps, TreeUtils } from './tree-node-type'
 import { treeNodeProps } from './tree-node-type'
 
@@ -8,14 +9,23 @@ export default defineComponent({
   name: 'MTreeNode',
   props: treeNodeProps,
   setup(props: TreeNodeProps, { slots }) {
-    const { checkable, treeNode } = toRefs(props)
+    const { checkable, operable, treeNode } = toRefs(props)
     const {
+      append, remove,
       toggleNode, toggleCheckedNode, getChildrenExpanded,
     } = inject('TREE_UTILS') as TreeUtils
+
+    const isVisible = ref(false)
+    const toggleOperate = () => {
+      isVisible.value = !isVisible.value
+    }
+
     return () => (
-            <div class="m-tree--node" style={{
-              paddingLeft: `${(treeNode.value.level - 1) * NODE_INDENT}px`,
-            }}>
+            <div onMouseenter={toggleOperate}
+                 onMouseleave={toggleOperate}
+                 class="m-tree--node" style={{
+                   paddingLeft: `${(treeNode.value.level - 1) * NODE_INDENT}px`,
+                 }}>
                 {/* 参照线 */}
                 {
                     !treeNode.value.isLeaf && treeNode.value.expanded && <span class="m-tree--node_vline" style={{
@@ -54,6 +64,16 @@ export default defineComponent({
                                               onChange={() => toggleCheckedNode(treeNode.value)}/>
                 }
                 {slots && slots.content ? slots.content({ nodeData: treeNode.value }) : treeNode.value.label}
+                {
+                    operable.value && isVisible.value && <div class="m-tree--node_operate">
+                        <span class="m-tree--node_operate--item" onClick={() => {
+                          append(treeNode.value, { label: '新增节点' } as MInnerTreeNode)
+                        }}>+</span>
+                        <span class="m-tree--node_operate--item" onClick={() => {
+                          remove(treeNode.value)
+                        }}>x</span>
+                    </div>
+                }
             </div>)
   },
 })

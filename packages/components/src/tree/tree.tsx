@@ -5,9 +5,6 @@ import { useTree } from './composables/useTree'
 import './style/tree.scss'
 import MTreeNode from './components/tree-node'
 
-const NODE_HEIGHT = 24
-const NODE_INDENT = 24
-
 export default defineComponent({
   name: 'MTree',
   props: treeProps,
@@ -15,6 +12,8 @@ export default defineComponent({
     const { data } = toRefs(props)
     const treeData = useTree(data)
     provide('TREE_UTILS', {
+      append: treeData.append,
+      remove: treeData.remove,
       toggleNode: treeData.toggleNode,
       toggleCheckedNode: treeData.toggleCheckedNode,
       getChildren: treeData.getChildren,
