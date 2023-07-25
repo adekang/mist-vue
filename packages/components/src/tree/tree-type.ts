@@ -5,6 +5,10 @@ export const treeProps = {
     type: Array as PropType<MTreeNode[]>,
     required: true,
   },
+  lineadle: {
+    type: Boolean,
+    default: false,
+  },
   checkable: {
     type: Boolean,
     default: false,

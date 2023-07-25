@@ -56,7 +56,6 @@ const data = ref([
 
 <template>
   <MTree :data="data" checkable>
-    11111111
     <template #icon="{ nodeData, toggleNode }">
       <span v-if="nodeData.isLeaf" class="devui-tree-node__indent" />
       <span

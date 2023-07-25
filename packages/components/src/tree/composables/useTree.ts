@@ -43,7 +43,7 @@ export function useTree(node: Ref<MTreeNode[]> | MTreeNode[]) {
     return result
   })
 
-  const toggleCheckedNOde = (node: MInnerTreeNode) => {
+  const toggleCheckedNode = (node: MInnerTreeNode) => {
     //   避免初始化没有node checked  为undefined
     // node.checked = !node.checked
     //  父到子的选中
@@ -61,11 +61,27 @@ export function useTree(node: Ref<MTreeNode[]> | MTreeNode[]) {
     parentNode.checked = checkedSiblingNodes.length === siblingNodes.length
   }
 
+  // 计算参考线高度
+  const getChildrenExpanded = (node: MInnerTreeNode) => {
+    const result: MInnerTreeNode[] = []
+    // 找到node在列表中的索引
+    const startIndex = expandedTree.value.findIndex(item => item.id === node.id)
+    for (
+      let i = startIndex + 1;
+      i < expandedTree.value.length && node.level < expandedTree.value[i].level;
+      i++
+    )
+      result.push(expandedTree.value[i])
+
+    // 找到它后面所有的子节点(level比当前节点大)
+    return result
+  }
   return {
     innerData,
     expandedTree,
     toggleNode,
     getChildren,
-    toggleCheckedNOde,
+    toggleCheckedNode,
+    getChildrenExpanded,
   }
 }
