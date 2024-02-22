@@ -1,17 +1,20 @@
 {
   "name": "examples",
-  "version": "0.0.38",
+  "version": "0.0.43-beta.2",
   "description": "这是一个组件开发演示文档",
   "main": "index.js",
   "scripts": {
     "dev": "vite --port=3000"
   },
-  "keywords": ["examples","vue"],
+  "keywords": [
+    "examples",
+    "vue"
+  ],
   "author": "adekang",
   "license": "ISC",
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.3.9"
+    "@vitejs/plugin-vue": "^4.6.2",
+    "vite": "^4.5.2"
   },
   "dependencies": {
     "@mist-vue/components": "workspace:^"
