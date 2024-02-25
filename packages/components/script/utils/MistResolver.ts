@@ -30,8 +30,9 @@ function resolveComponent(name, options) {
   }
 }
 
-export function MistResolver(options = {}) {
+function MistResolver(options = {}) {
   let optionsResolved
+
   async function resolveOptions() {
     if (optionsResolved)
       return optionsResolved
@@ -60,3 +61,5 @@ export function MistResolver(options = {}) {
     },
   ]
 }
+
+export default MistResolver as any

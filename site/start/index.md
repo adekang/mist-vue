@@ -25,7 +25,7 @@ npm install -D unplugin-vue-components unplugin-auto-import
 import { defineConfig } from 'vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { MistResolver } from 'mist-vue/resolvers'
+import MistResolver from 'mist-vue/resolvers'
 
 export default defineConfig({
   // ...
