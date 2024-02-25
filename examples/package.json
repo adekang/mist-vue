@@ -1,6 +1,6 @@
 {
   "name": "examples",
-  "version": "0.0.43-beta.4",
+  "version": "0.0.43-beta.5",
   "description": "这是一个组件开发演示文档",
   "main": "index.js",
   "scripts": {
