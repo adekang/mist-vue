@@ -1,6 +1,6 @@
 {
   "name": "examples",
-  "version": "0.0.43-beta.3",
+  "version": "0.0.43-beta.4",
   "description": "这是一个组件开发演示文档",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,7 @@
   ],
   "author": "adekang",
   "license": "ISC",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "@mist-vue/components": "workspace:^"
   }
