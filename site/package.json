@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "0.0.43-beta.2",
+  "version": "0.0.43-beta.3",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -16,6 +16,9 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "unplugin": "^1.7.1",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
     "vite-plugin-vitepress-demo": "2.2.1",
     "vitepress": "1.0.0-rc.44",
     "vue": "^3.4.19"
