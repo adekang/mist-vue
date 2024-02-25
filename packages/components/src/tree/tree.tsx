@@ -2,7 +2,6 @@ import { defineComponent, provide, toRefs } from 'vue'
 import { treeProps } from './tree-type'
 import type { TreeProps } from './tree-type'
 import { useTree } from './composables/useTree'
-import './style/tree.scss'
 import MTreeNode from './components/tree-node'
 
 export default defineComponent({

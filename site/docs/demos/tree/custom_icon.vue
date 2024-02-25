@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { MTree } from 'mist-vue'
 import { ref } from 'vue'
+import 'mist-vue/es/src/tree/style/index.css'
 
 const data = ref([
   {
@@ -57,7 +58,7 @@ const data = ref([
 <template>
   <MTree :data="data" checkable>
     <template #icon="{ nodeData, toggleNode }">
-      <span v-if="nodeData.isLeaf" class="devui-tree-node__indent" />
+      <span v-if="nodeData.isLeaf" class="devui-tree-node__indent"/>
       <span
         v-else @click="(event) => {
           event.stopPropagation();

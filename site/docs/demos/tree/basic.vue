@@ -9,6 +9,7 @@ Hello World This is Test Docs block code in `tree.vue`.
 <script setup lang="ts">
 import { MTree } from 'mist-vue'
 import { ref } from 'vue'
+import 'mist-vue/es/src/tree/style/index.css'
 
 const data = ref([{
   id: '1',
@@ -43,7 +44,7 @@ const data = ref([{
 
 <template>
   <div>
-    <MTree :data="data" />
+    <MTree :data="data"/>
   </div>
 </template>
 

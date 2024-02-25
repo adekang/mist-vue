@@ -8,6 +8,8 @@ Hello World This is Test Docs block code in `button.vue`.
 
 <script setup lang="ts">
 import { MButton, MInput } from 'mist-vue'
+import 'mist-vue/es/src/button/style/index.css'
+import 'mist-vue/es/src/input/style/index.css'
 </script>
 
 <template>

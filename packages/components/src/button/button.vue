@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import './style/button.scss'
 import { computed } from 'vue'
 import { buttonProps } from './button-types'
 

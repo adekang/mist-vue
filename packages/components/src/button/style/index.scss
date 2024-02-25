@@ -1,31 +1,13 @@
-.m-button {
-  display: inline-block;
-  line-height: 1;
-  white-space: nowrap;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid #dcdfe6;
-  color: #606266;
-  -webkit-appearance: none;
-  text-align: center;
-  box-sizing: border-box;
-  outline: none;
-  margin: 0;
-  transition: 0.1s;
-  font-weight: 500;
-  padding: 12px 20px;
-  font-size: 14px;
-  border-radius: 4px;
-}
+@use './button-config.scss';
+@use './button-base.scss';
 
-.m-button.m-button--primary {
-  color: #fff;
-  background-color: #409eff;
-  border-color: #409eff;
-
-  &:hover {
-    background: #66b1ff;
-    border-color: #66b1ff;
-    color: #fff;
-  }
+.m-btn {
+  // 导入基础样式
+  @include button-base.button-base;
+  // 导入type相关的样式
+  @include button-base.button-variant(button-config.$type);
+  // 导入size相关的样式
+  @include button-base.button-variant(button-config.$size);
+  // 导入hover等伪类
+  @include button-base.button-variant(button-config.$pseudo, true);
 }

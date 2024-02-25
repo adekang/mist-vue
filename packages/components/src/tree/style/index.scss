@@ -1,8 +1,8 @@
 @use './tree-config';
-@import './tree-base';
+@use './tree-base';
 
 .m-tree {
-  @include tree-base;
+  @include tree-base.tree-base;
 
 
   &--node_vline {
