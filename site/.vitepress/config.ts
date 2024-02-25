@@ -1,7 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { vitepressDemo } from 'vite-plugin-vitepress-demo'
+import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 import { getSidebar } from './config/siderbar'
 import { getNav } from './config/nav'
+import { MistResolver } from './config/MistResolver'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -13,6 +16,12 @@ export default defineConfig({
     plugins: [
       vitepressDemo({
         glob: ['**/demos/*.vue'],
+      }),
+      AutoImport({
+        resolvers: [MistResolver()],
+      }),
+      Components({
+        resolvers: [MistResolver()],
       }),
     ],
   },

@@ -7,8 +7,8 @@ Hello World This is Test Docs block code in `button.vue`.
 </docs>
 
 <script setup lang="ts">
-import { MButton } from 'mist-vue'
-import 'mist-vue/es/src/button/style/index.css'
+// import { MButton } from 'mist-vue'
+// import 'mist-vue/es/src/button/style/index.css'
 </script>
 
 <template>
