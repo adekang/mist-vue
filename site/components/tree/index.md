@@ -2,12 +2,12 @@
 
 ## 基础组件
 
-<demo src="./basic.vue"></demo>
+<demo src="./demos/basic.vue"></demo>
 
 ## 可选
 
-<demo src="./checkable.vue"></demo>
+<demo src="./demos/checkable.vue"></demo>
 
 ## 自定义图标
 
-<demo src="./custom_icon.vue"></demo>
+<demo src="./demos/custom_icon.vue"></demo>

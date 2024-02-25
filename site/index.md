@@ -3,16 +3,16 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "Mist Vue"
+  text: "This is a vue component library"
+  tagline: 组件库
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Components
+      link: /components/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Start
+      link: /start/
 
 features:
   - title: Feature A

@@ -7,9 +7,8 @@ Hello World This is Test Docs block code in `button.vue`.
 </docs>
 
 <script setup lang="ts">
-import { MButton, MInput } from 'mist-vue'
+import { MButton } from 'mist-vue'
 import 'mist-vue/es/src/button/style/index.css'
-import 'mist-vue/es/src/input/style/index.css'
 </script>
 
 <template>
@@ -20,7 +19,6 @@ import 'mist-vue/es/src/input/style/index.css'
     <MButton type="primary">
       基础按钮
     </MButton>
-    <MInput type="number" />
   </div>
 </template>
 
