@@ -5,18 +5,19 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress preview"
   },
   "keywords": [],
   "author": "adekang",
   "license": "ISC",
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.6.2",
+    "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "vite-plugin-vitepress-demo": "2.0.0-beta.29",
-    "vitepress": "1.0.0-beta.6",
+    "vite-plugin-vitepress-demo": "2.2.1",
+    "vitepress": "1.0.0-rc.44",
     "vue": "^3.4.19"
   },
   "dependencies": {

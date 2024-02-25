@@ -1,5 +1,5 @@
 cd site &&
-#rm -rf dist &&
+rm -rf dist &&
 #pnpm docs:build &&
 cd dist &&
 git init &&
