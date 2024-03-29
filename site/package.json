@@ -20,7 +20,7 @@
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
     "vite-plugin-vitepress-demo": "2.2.1",
-    "vitepress": "1.0.0-rc.44",
+    "vitepress": "^1.0.1",
     "vue": "^3.4.19"
   },
   "dependencies": {
