@@ -24,6 +24,9 @@
   "keywords": [],
   "author": "adekang",
   "license": "ISC",
+  "dependencies": {
+    "vue": "^3.4.19"
+  },
   "devDependencies": {
     "@adekang/eslint-config": "^0.39.10",
     "@babel/core": "^7.23.9",
@@ -59,9 +62,8 @@
     "sass": "^1.71.1",
     "sucrase": "^3.35.0",
     "typescript": "^5.3.3",
-    "vite": "5.1.2",
-    "vite-plugin-dts": "1.4.1",
-    "vitest": "^0.32.4",
-    "vue": "^3.4.19"
+    "vite": "^5.1.2",
+    "vite-plugin-dts": "^3.9.1 ",
+    "vitest": "^1.4.0"
   }
 }
