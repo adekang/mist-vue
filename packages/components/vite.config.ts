@@ -47,9 +47,9 @@ export default defineConfig({
     vueJsx(),
     dts({
       entryRoot: './src',
-      outputDir: ['../mist-vue/es/src', '../mist-vue/lib/src'],
+      outDir: ['../mist-vue/es/src', '../mist-vue/lib/src'],
       // 指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
-      tsConfigFilePath: '../../tsconfig.json',
+      tsconfigPath: '../../tsconfig.json',
     }),
     // {
     //   // 将所有输出文件中的 .scss 换成 .css

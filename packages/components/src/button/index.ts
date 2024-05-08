@@ -1,4 +1,4 @@
-import { withInstall } from '../_util'
+import { withInstall } from '@mist-vue/utils'
 import _Button from './button.vue'
 
 // app.use 注册
