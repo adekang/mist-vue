@@ -25,14 +25,14 @@
   "author": "adekang",
   "license": "ISC",
   "dependencies": {
-    "vue": "^3.4.19"
+    "vue": "^3.4.27"
   },
   "devDependencies": {
     "@adekang/eslint-config": "^0.39.10",
-    "@babel/core": "^7.23.9",
-    "@babel/plugin-transform-runtime": "^7.23.9",
-    "@babel/preset-env": "^7.23.9",
-    "@babel/preset-typescript": "^7.23.3",
+    "@babel/core": "^7.24.5",
+    "@babel/plugin-transform-runtime": "^7.24.3",
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-typescript": "^7.24.1",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@testing-library/vue": "^7.0.0",
@@ -40,13 +40,12 @@
     "@types/gulp-autoprefixer": "^0.0.34",
     "@types/gulp-babel": "^6.1.33",
     "@types/gulp-less": "^0.0.33",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.12.10",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vitest/coverage-v8": "^0.32.4",
-    "@vue/runtime-core": "^3.4.19",
-    "@vue/test-utils": "^2.4.4",
-    "bumpp": "^9.3.0",
+    "@vue/runtime-core": "^3.4.27",
+    "@vue/test-utils": "^2.4.6",
+    "bumpp": "^9.4.1",
     "eslint": "^8.57.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -58,12 +57,12 @@
     "less": "^4.2.0",
     "lint-staged": "^13.3.0",
     "release-it": "^15.11.0",
-    "rollup": "^4.12.0",
-    "sass": "^1.71.1",
+    "rollup": "^4.17.2",
+    "sass": "^1.77.0",
     "sucrase": "^3.35.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.2",
-    "vite-plugin-dts": "^3.9.1 ",
-    "vitest": "^1.4.0"
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
   }
 }
