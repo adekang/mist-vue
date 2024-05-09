@@ -1,7 +1,7 @@
 import type { App } from 'vue'
-import * as components from './src/index'
+import * as components from './src/components'
 
-export * from './src/index'
+export * from './src/components'
 
 export default {
   install: (app: App) => {

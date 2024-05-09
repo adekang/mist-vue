@@ -1,4 +1,4 @@
-import { withInstall } from '@mist-vue/utils'
+import { withInstall } from '../_utils'
 import _Tree from './tree'
 
 export const MTree = withInstall(_Tree)

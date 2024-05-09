@@ -3,7 +3,7 @@ export default {
     [
       require.resolve('@babel/preset-env'),
       {
-        modules: false,
+        modules: true,
       },
     ],
     require.resolve('@babel/preset-typescript'),

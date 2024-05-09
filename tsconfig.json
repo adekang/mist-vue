@@ -3,18 +3,23 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "strict": false,
-    "target": "ES2015",
+    "target": "ESNext",
     "module": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "moduleResolution": "Node",
+    "isolatedModules": true,
     "noImplicitThis": false,
+    "forceConsistentCasingInFileNames": true,
     "lib": [
-      "esnext",
-      "dom"
+      "ES2016",
+      "DOM",
+      "DOM.Iterable"
     ]
   },
   "exclude": [
     "**/node_modules"
-  ]
+  ],
 }
+
+

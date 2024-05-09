@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@mist-vue/utils':
-        specifier: workspace:*
-        version: link:packages/utils
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
@@ -51,6 +48,9 @@ importers:
       '@types/gulp-less':
         specifier: ^0.0.33
         version: 0.0.33
+      '@types/gulp-sass':
+        specifier: ^5.0.4
+        version: 5.0.4
       '@types/node':
         specifier: ^20.12.10
         version: 20.12.10
@@ -157,8 +157,6 @@ importers:
   packages/components: {}
 
   packages/mist-vue: {}
-
-  packages/utils: {}
 
   site:
     dependencies:
@@ -1615,6 +1613,9 @@ packages:
   '@types/gulp-less@0.0.33':
     resolution: {integrity: sha512-JdIeiAe6/2ipkUqvsLojaKyLmFv5Kwejd3xmdIh1+a7B/C1uFLfnYTvu2zEpr3sOPx85DcwmMFZnv9FgVGDjBw==}
 
+  '@types/gulp-sass@5.0.4':
+    resolution: {integrity: sha512-wDgpyM9fRq/k7kn1ZGcoY69Pj8+AlB50U9TKmBdbmHUduy+4b7WZ1zrDl4df43W+IqJegEgen6XAKO2+/RQILA==}
+
   '@types/gulp@4.0.17':
     resolution: {integrity: sha512-+pKQynu2C/HS16kgmDlAicjtFYP8kaa86eE9P0Ae7GB5W29we/E2TIdbOWtEZD5XkpY+jr8fyqfwO6SWZecLpQ==}
 
@@ -1644,6 +1645,9 @@ packages:
 
   '@types/minimist@1.2.5':
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
+
+  '@types/node-sass@4.11.7':
+    resolution: {integrity: sha512-QY0sXZGPRzJ2obo66f9zB6S0Uo9PRdcoPKPbyftSoKXub90s4ut/JK3fYHOqmhYhRRVEB3P5o5rEnq2/bWBdeg==}
 
   '@types/node@20.12.10':
     resolution: {integrity: sha512-Eem5pH9pmWBHoGAT8Dr5fdc5rYA+4NAovdM4EktRPVAAiJhmWWfQrA0cFhAbOsQdSfIHjAud6YdkbL69+zSKjw==}
@@ -7794,6 +7798,11 @@ snapshots:
     dependencies:
       '@types/node': 20.12.10
 
+  '@types/gulp-sass@5.0.4':
+    dependencies:
+      '@types/node': 20.12.10
+      '@types/node-sass': 4.11.7
+
   '@types/gulp@4.0.17':
     dependencies:
       '@types/node': 20.12.10
@@ -7825,6 +7834,10 @@ snapshots:
   '@types/mdurl@2.0.0': {}
 
   '@types/minimist@1.2.5': {}
+
+  '@types/node-sass@4.11.7':
+    dependencies:
+      '@types/node': 20.12.10
 
   '@types/node@20.12.10':
     dependencies:

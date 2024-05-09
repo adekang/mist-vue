@@ -5,8 +5,6 @@ import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   build: {
-    // 打包文件目录
-    outDir: 'es',
     // 压缩
     minify: false,
     rollupOptions: {

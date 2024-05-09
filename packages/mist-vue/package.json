@@ -16,7 +16,7 @@
   ],
   "author": "adekang",
   "license": "MIT",
-  "typings": "lib/index.d.ts",
+  "typings": "lib/components.d.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
