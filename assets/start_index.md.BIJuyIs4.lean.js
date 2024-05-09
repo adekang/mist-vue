@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as i,a7 as n}from"./chunks/framework.jepuxw6g.js";const u=JSON.parse('{"title":"开始","description":"","frontmatter":{},"headers":[],"relativePath":"start/index.md","filePath":"start/index.md"}'),e={name:"start/index.md"},p=n("",14),t=[p];function l(h,o,r,E,c,d){return i(),a("div",null,t)}const g=s(e,[["render",l]]);export{u as __pageData,g as default};
