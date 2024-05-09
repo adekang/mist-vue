@@ -38,7 +38,7 @@ export function buildSassStyle() {
 // 打包组件
 export async function buildComponent() {
   console.log('打包组件...')
-  await run('pnpm run build', componentPath)
+  await run('pnpm run build:all', componentPath)
 }
 
 export default series(

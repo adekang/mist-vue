@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { vitepressDemo } from 'vite-plugin-vitepress-demo'
+
 import { getSidebar } from './config/siderbar'
 import { getNav } from './config/nav'
 

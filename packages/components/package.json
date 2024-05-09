@@ -2,9 +2,12 @@
   "name": "@mist-vue/components",
   "version": "0.0.43-beta.5",
   "description": "",
-  "main": "./index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "build": "vite build",
+    "build:umd": "vite build --config vite.umd.config.ts",
+    "build:style": "vite build --config vite.style.config.ts",
+    "build:all": "pnpm run build && pnpm run build:umd && pnpm run build:style",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },

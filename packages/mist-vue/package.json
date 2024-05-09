@@ -1,22 +1,36 @@
 {
   "name": "mist-vue",
+  "type": "module",
   "version": "0.0.43-beta.5",
-  "main": "lib/index.js",
-  "module": "es/index.mjs",
-  "files": [
-    "es",
-    "lib"
-  ],
+  "module": "es/src/index.js",
+  "main": "es/src/index.js",
+  "types": "es/src/index.d.ts",
   "keywords": [
     "vue3组件库"
   ],
   "sideEffects": [
     "es/**/style/*",
-    "lib/**/style/*"
+    "lib/**/style/*",
+    "dist/mist-vue.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./es/src/index.d.ts",
+      "import": "./es/src/index.js",
+      "require": "./lib/src/index.js"
+    },
+    "./es/*": "./es/src/*",
+    "./lib/*": "./lib/src/*",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "es",
+    "lib"
   ],
   "author": "adekang",
   "license": "MIT",
-  "typings": "lib/components.d.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

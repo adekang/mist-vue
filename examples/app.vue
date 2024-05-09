@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MTree } from '@mist-vue/components'
+import { MTree } from '@mist-vue/components/src'
 import { ref } from 'vue'
 
 const data = ref([{

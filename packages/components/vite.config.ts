@@ -5,20 +5,22 @@ import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   build: {
+    emptyOutDir: false,
     // 压缩
     minify: false,
     rollupOptions: {
       // 忽略打包vue文件
       external: ['vue', /\.less|\.scss/, '@mist-vue/utils'],
-      input: ['index.ts'],
+      input: ['src/index.ts'],
       output: [
         {
           // 打包格式
           format: 'es',
           // 打包后文件名
-          entryFileNames: '[name].mjs',
+          entryFileNames: '[name].js',
           // 让打包目录和我们目录对应
           preserveModules: true,
+          preserveModulesRoot: '.',
           exports: 'named',
           // 配置打包根目录
           dir: '../mist-vue/es',
@@ -31,13 +33,14 @@ export default defineConfig({
           // 让打包目录和我们目录对应
           preserveModules: true,
           exports: 'named',
+          preserveModulesRoot: '.',
           // 配置打包根目录
           dir: '../mist-vue/lib',
         },
       ],
     },
     lib: {
-      entry: './index.ts',
+      entry: 'src/index.ts',
     },
   },
   plugins: [
@@ -46,8 +49,7 @@ export default defineConfig({
     dts({
       entryRoot: './src',
       outDir: ['../mist-vue/es/src', '../mist-vue/lib/src'],
-      // 指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
-      tsconfigPath: '../../tsconfig.json',
+      exclude: ['**/_test_/**'],
     }),
     // {
     //   // 将所有输出文件中的 .scss 换成 .css
