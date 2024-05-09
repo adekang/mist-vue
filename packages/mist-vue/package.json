@@ -9,9 +9,8 @@
     "vue3组件库"
   ],
   "sideEffects": [
-    "es/**/style/*",
-    "lib/**/style/*",
-    "dist/mist-vue.css"
+    "es/src/*/style/*",
+    "lib/src/*/style/*"
   ],
   "exports": {
     ".": {
@@ -19,8 +18,8 @@
       "import": "./es/src/index.js",
       "require": "./lib/src/index.js"
     },
-    "./es/*": "./es/src/*",
-    "./lib/*": "./lib/src/*",
+    "./es/src/*": "./es/src/*",
+    "./lib/src/*": "./lib/src/*",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },

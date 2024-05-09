@@ -44,7 +44,7 @@ const data = ref([{
 
 <template>
   <div>
-    <MTree :data="data"/>
+    <MTree :data="data" />
   </div>
 </template>
 

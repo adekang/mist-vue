@@ -8,7 +8,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "moduleResolution": "Node",
-    "isolatedModules": true,
     "noImplicitThis": false,
     "forceConsistentCasingInFileNames": true,
     "lib": [
@@ -17,6 +16,7 @@
       "DOM.Iterable"
     ]
   },
+  "include": ["./packages/components/**/*.ts", "./packages/component/**/*.tsx", "./packages/component/**/*.vue"],
   "exclude": [
     "**/node_modules"
   ],
