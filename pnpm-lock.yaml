@@ -126,6 +126,9 @@ importers:
       vitest:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@20.12.10)(happy-dom@9.20.3)(less@4.2.0)(sass@1.77.0)
+      vue-tsc:
+        specifier: ^1.8.25
+        version: 1.8.27(typescript@5.4.5)
 
   examples:
     dependencies:
@@ -11448,7 +11451,7 @@ snapshots:
       got: 12.6.1
       registry-auth-token: 5.0.2
       registry-url: 6.0.1
-      semver: 7.5.1
+      semver: 7.6.1
 
   parent-module@1.0.1:
     dependencies:
@@ -12003,7 +12006,7 @@ snapshots:
 
   semver-diff@4.0.0:
     dependencies:
-      semver: 7.5.1
+      semver: 7.6.1
 
   semver-greatest-satisfied-range@1.1.0:
     dependencies:
@@ -12672,7 +12675,7 @@ snapshots:
       is-yarn-global: 0.4.1
       latest-version: 7.0.0
       pupa: 3.1.0
-      semver: 7.5.1
+      semver: 7.6.1
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
 

@@ -16,7 +16,7 @@ import 'mist-vue/dist/mist-vue.css'
     <MButton type="warning" size="large">
       基础按钮
     </MButton>
-    <MButton type="primary">
+    <MButton type="primary" size="large">
       基础按钮
     </MButton>
   </div>
