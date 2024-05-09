@@ -1,6 +1,6 @@
 cd site &&
-#rm -rf dist &&
-#pnpm docs:build &&
+rm -rf dist &&
+pnpm docs:build &&
 cd dist &&
 git init &&
 git add . &&
