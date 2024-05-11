@@ -4,6 +4,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import { AntdTheme } from 'vite-plugin-vitepress-demo/theme'
+import 'mist-vue/dist/mist-vue.css'
 
 export default {
   extends: DefaultTheme,

@@ -1,49 +1,77 @@
-// 变量
-// 定义主题变量
-$m-border-radius: var(--m-border-radius, 2px); //一般圆角
+$colors: (
+  "primary": #409eff,
+  "success": #67c23a,
+  "warning": #e6a23c,
+  "danger": #f56c6c,
+  "info": #909399
+);
 
-$m-animation-duration-slow: var(--m-animation-duration-slow, 300ms);
-$m-animation-ease-in-out-smooth: var(--m-animation-ease-in-out-smooth,
-        cubic-bezier(0.645, 0.045, 0.355, 1));
-$m-light-text: var(--m-light-text, #ffffff); // 有色深色背景下字体颜色（固定）
+:root {
+  /* colors */
+  --m-color-white: #ffffff;
+  --m-color-black: #000000;
+  --m-bg-color: #ffffff;
+  --m-bg-color-page: #f2f3f5;
+  --m-bg-color-overlay: #ffffff;
+  --m-text-color-primary: #303133;
+  --m-text-color-regular: #606266;
+  --m-text-color-secondary: #909399;
+  --m-text-color-placeholder: #a8abb2;
+  --m-text-color-disabled: #c0c4cc;
+  --m-border-color: #dcdfe6;
+  --m-border-color-light: #e4e7ed;
+  --m-border-color-lighter: #ebeef5;
+  --m-border-color-extra-light: #f2f6fc;
+  --m-border-color-dark: #d4d7de;
+  --m-border-color-darker: #cdd0d6;
+  --m-fill-color: #f0f2f5;
+  --m-fill-color-light: #f5f7fa;
+  --m-fill-color-lighter: #fafafa;
+  --m-fill-color-extra-light: #fafcff;
+  --m-fill-color-dark: #ebedf0;
+  --m-fill-color-darker: #e6e8eb;
+  --m-fill-color-blank: #ffffff;
 
-$m-text: var(--m-text, #252b3a); // 正文文本
-$m-block: var(--m-block,
-        #ffffff); // 大面积的不可折叠区块的背景色（例如顶部导航背景色）
-$m-line: var(--m-line, #adb0b8); // 边框分割线，仅用于边框
-$m-form-control-line-active: var(--m-form-control-line-active,
-        #5e7ce0); // 表单控件边框激活色，用于获得焦点
-$m-brand-active: var(--m-brand-active, #526ecc); // 品牌色激活色（加深）
-$m-brand-active-focus: var(--m-brand-active-focus,
-        #344899); // 品牌色焦点色（重度加深）
+  // Loop to create color variants
+  @each $val, $color in $colors {
+    $color-name: "--m-color-#{$val}";
+    #{$color-name}: $color;
 
-// bg
-$m-bg: var(--m-bg, #f5f6fa); // 背景色
-$m-bg-light: var(--m-bg-light, #ffffff); // 有色浅色背景
-$m-bg-dark: var(--m-bg-dark, #252b3a); // 有色深色背景
-$m-bg-disabled: var(--m-bg-disabled, #f5f6fa); // 禁用背景色
+    @for $i from 3 through 9 {
+      $light-color-name: "--m-color-#{$val}-light-#{$i}";
+      #{$light-color-name}: mix(#fff, $color, $i * 10%);
+    }
 
+    $dark-color-name: "--m-color-#{$val}-dark-2";
+    #{$dark-color-name}: mix(#000, $color, 20%);
+  }
+  /* border */
+  --m-border-width: 1px;
+  --m-border-style: solid;
+  --m-border-color-hover: var(--m-text-color-disabled);
+  --m-border: var(--m-border-width) var(--m-border-style) var(--m-border-color);
+  --m-border-radius-base: 4px;
+  --m-border-radius-small: 2px;
+  --m-border-radius-round: 20px;
+  --m-border-radius-circle: 100%;
 
+  /*font*/
+  --m-font-size-extra-large: 20px;
+  --m-font-size-large: 18px;
+  --m-font-size-medium: 16px;
+  --m-font-size-base: 14px;
+  --m-font-size-small: 13px;
+  --m-font-size-extra-small: 12px;
+  --m-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --m-font-weight-primary: 500;
 
-// font-size
-$m-font-size-sm: var(--m-font-size-md, 13px); //当组件size为''时使用此字号大小
-$m-font-size-md: var(--m-font-size-md, 14px); //当组件size为''时使用此字号大小
-$m-font-size-lg: var(--m-font-size-md, 18px); //当组件size为''时使用此字号大小
+  /*disabled*/
+  --m-disabled-bg-color: var(--m-fill-color-light);
+  --m-disabled-text-color: var(--m-text-color-placeholder);
+  --m-disabled-border-color: var(--m-border-color-light);
 
-// border-radius
-$m-border-radius: var(--m-border-radius, 2px); //一般圆角
-
-// font-color
-$m-font-color: var(--m-font-color, #252b3a); // 正文文本
-$m-font-color-light: var(--m-font-color-light, #ffffff); // 有色深色背景下字体颜色（固定）
-$m-font-color-disabled: var(--m-font-color-disabled, #adb0b8); // 禁用文本
-
-
-// primary
-$m-primary: var(--m-primary, #5e7ce0); // 主要按钮，同品牌色
-$m-primary-hover: var(--m-primary-hover, #7693f5); // 主要按钮悬停
-$m-primary-active: var(--m-primary-active, #344899); // 主要按钮激活
-$m-primary-disabled: var(--m-primary-disabled, #a0cfff); // 主要禁用激活
-
-//  warning
-$m-warning: var(--m-color-warning, #e6a23c); // 主要按钮，同品牌色
+  /*animation*/
+  --m-transition-duration: 0.4s;
+  --m-transition-duration-fast: 0.2s;
+}

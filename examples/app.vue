@@ -1,38 +1,11 @@
 <script setup lang="ts">
-import { MTree } from '@mist-vue/components/src'
-import { ref } from 'vue'
+import { MButton } from '@mist-vue/components/src'
 
-const data = ref([{
-  id: '1',
-  label: 'js',
-  children: [
-    {
-      id: '1001',
-      label: 'vue',
-      children: [
-        { id: '100101', label: 'vue2' },
-        { id: '100102', label: 'vue3' },
-      ],
-    },
-    { id: '1002', label: 'react' },
-  ],
-},
-{
-  id: '2',
-  label: 'webpack',
-},
-{
-  id: '3',
-  label: 'css',
-  children: [
-    { id: '3001', label: 'sass' },
-    { id: '3002', label: 'less' },
-    { id: '3003', label: 'stylus' },
-  ],
-},
-])
+function handleClick() {
+  console.log('hello')
+}
 </script>
 
 <template>
-  <MTree :data="data" checkable operable />
+  <MButton type="warning" size="large" useThrottle @click="handleClick" loading>你好</MButton>
 </template>

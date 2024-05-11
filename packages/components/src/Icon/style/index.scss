@@ -1,0 +1,16 @@
+.m-icon {
+  --m-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--m-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .m-icon--#{$val} {
+    --m-icon-color: var(--m-color-#{$val});
+  }
+}

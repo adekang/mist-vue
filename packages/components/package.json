@@ -8,7 +8,7 @@
     "build:umd": "vite build --config vite.umd.config.ts",
     "build:style": "vite build --config vite.style.config.ts",
     "build:all": "pnpm run build && pnpm run build:umd && pnpm run build:style",
-    "test": "vitest",
+    "test": "vitest  --coverage",
     "coverage": "vitest run --coverage"
   },
   "keywords": [],
@@ -16,6 +16,13 @@
   "license": "ISC",
   "dependencies": {
     "@vitest/coverage-v8": "^1.6.0",
-    "jsdom": "^24.0.0"
+    "jsdom": "^24.0.0",
+    "lodash-es": "^4.17.21",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.6"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12"
   }
 }

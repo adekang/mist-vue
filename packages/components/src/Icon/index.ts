@@ -1,12 +1,12 @@
 import { withInstall } from '../_utils'
-import _Button from './button.vue'
+import _Icon from './Icon.vue'
 
-export * from './button-types.ts'
+export * from './types.ts'
 
 // app.use 注册
 // 具名导出
-export const MButton = withInstall(_Button)
+export const Icon = withInstall(_Icon)
 
 // 默认导出
-export default MButton
+export default Icon
 // export { default as MButton } from './button.vue';

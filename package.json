@@ -14,7 +14,7 @@
     "lint": "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
     "release": "pnpm build:mist && pnpm release:mist",
     "prepare": "husky install",
-    "test:build": "gulp -f packages/components/script/bundle/index.ts"
+    "test": "pnpm run --filter @mist-vue/components test"
   },
   "lint-staged": {
     "*.{js,jsx,tsx,ts,vue}": [
