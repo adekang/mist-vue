@@ -6,5 +6,9 @@ export function getNav(): DefaultTheme.NavItem[] {
       text: 'Components',
       link: '/components/',
     },
+    {
+      text: '工具库',
+      link: '/utils/',
+    },
   ]
 }

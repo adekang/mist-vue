@@ -22,5 +22,11 @@ export function getSidebar(): DefaultTheme.Sidebar {
         items: [{ text: 'Space 间距', link: '/components/space/' }],
       },
     ],
+    '/utils': [
+      {
+        text: '类名生成器',
+        link: '/utils/gen-class',
+      },
+    ],
   }
 }
