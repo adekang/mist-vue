@@ -1,4 +1,4 @@
-import { withInstall } from '../_utils'
+import { withInstall } from '@mist-vue/utils'
 import _Button from './button.vue'
 
 export * from './button-types.ts'

@@ -21,7 +21,8 @@
     "lodash-es": "^4.17.21",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@fortawesome/vue-fontawesome": "^3.0.6"
+    "@fortawesome/vue-fontawesome": "^3.0.6",
+    "@mist-vue/utils": "workspace:*"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12"
