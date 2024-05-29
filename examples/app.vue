@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import { MButton } from '@mist-vue/components/src'
+import { MCollapse, MCollapseItem } from '@mist-vue/components/src'
+import { ref } from 'vue'
 
-function handleClick() {
-  console.log('hello')
-}
+const a = ref([1])
 </script>
 
 <template>
-  <MButton type="warning" size="large" useThrottle @click="handleClick" loading>你好</MButton>
+  <MCollapse v-model="a">
+    <MCollapseItem title="title1" name="1">
+      <div>content1</div>
+    </MCollapseItem>
+    <MCollapseItem title="title2" name="2">
+      <div>content2</div>
+    </MCollapseItem>
+  </MCollapse>
 </template>
