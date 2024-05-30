@@ -3,7 +3,7 @@ import autoprefixer from 'gulp-autoprefixer'
 import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
 import { componentPath, pkgPath } from '../utils/paths'
-import delPath from '../utils/delpath'
+import delPath from '../utils/del'
 import run from '../utils/run'
 
 // import less from "gulp-less";
@@ -12,7 +12,7 @@ const sass = gulpSass(dartSass)
 
 export function removeDist() {
   console.log('删除目录...')
-  return delPath(`${pkgPath}/mist-vue`)
+  return delPath(['dist', 'lib', 'es'])
 }
 
 // 打包样式

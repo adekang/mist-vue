@@ -60,5 +60,4 @@ provide(COLLAPSE_CTX_KEY, {
 </template>
 
 <style scoped>
-@import "./style/collapse.scss";
 </style>

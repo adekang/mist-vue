@@ -57,5 +57,4 @@ function handleClick() {
 </template>
 
 <style scoped>
-@import './style/collapse.scss';
 </style>
