@@ -5,7 +5,7 @@ export default function genCoreTemplate(name: string) {
   const compName = `M${upperFirst(name)}`
   const propsTypeName = `${upperFirst(name)}Props`
   const propsName = `${name}Props`
-  const propsFileName = `${name}-type`
+  const propsFileName = 'types'
   const className = `m-${name}`
 
   return `\
@@ -23,6 +23,6 @@ export default defineComponent({
       )
     }
   },
-}) 
+})
 `
 }

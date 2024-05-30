@@ -40,12 +40,13 @@ export async function createComponent(meta: ComponentMeta) {
   writeFileSync(coreFilePath, genCoreTemplate(name), WRITE_FILE_OPTIONS)
 
   // 核心文件：组件类型文件
-  const typesFilePath = resolve(componentDir, `${name}-type.ts`)
+  const typesFilePath = resolve(componentDir, 'types.ts')
   writeFileSync(typesFilePath, genTypesTemplate(name), WRITE_FILE_OPTIONS)
 
   // 核心文件：组件样式文件
   // 样式文件
-  const styleFilePath = `${styleDir}/${name}.scss`
+  // const styleFilePath = `${styleDir}/${name}.scss`
+  const styleFilePath = `${styleDir}/index.scss`
   writeFileSync(styleFilePath, genStyleTemplate(name), WRITE_FILE_OPTIONS)
 
   const styleBaseFilePath = `${styleDir}/${name}-base.scss`
@@ -54,7 +55,7 @@ export async function createComponent(meta: ComponentMeta) {
   const styleConfigFilePath = `${styleDir}/${name}-config.scss`
   writeFileSync(styleConfigFilePath, genConfigStyleTemplate(), WRITE_FILE_OPTIONS)
   // 核心文件：测试文件
-  const testFilePath = `${testDir}/${name}.test.ts`
+  const testFilePath = `${testDir}/${name}.test.tsx`
   writeFileSync(testFilePath, genTestTemplate(name), WRITE_FILE_OPTIONS)
 
   // 组件索引文件
