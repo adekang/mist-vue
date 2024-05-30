@@ -22,7 +22,7 @@ export function buildSassStyle() {
   return src(`${componentPath}/src/**/style/index.scss`)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(dest(`${pkgPath}/mist-vue/lib/src`))
+    // .pipe(dest(`${pkgPath}/mist-vue/lib/src`))
     .pipe(dest(`${pkgPath}/mist-vue/es/src`))
 }
 
