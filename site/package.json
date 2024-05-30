@@ -21,12 +21,7 @@
     "unplugin-vue-components": "^0.26.0",
     "vite-plugin-vitepress-demo": "2.2.1",
     "vitepress": "^1.1.4",
-    "vue": "^3.4.27",
-    "lodash-es": "^4.17.21",
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@fortawesome/vue-fontawesome": "^3.0.6",
-    "@mist-vue/utils": "workspace:^"
+    "vue": "^3.4.27"
   },
   "dependencies": {
     "mist-vue": "workspace:^"

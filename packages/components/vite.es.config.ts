@@ -29,7 +29,7 @@ export default defineConfig({
           entryFileNames: '[name].js',
           // 让打包目录和我们目录对应
           preserveModules: true,
-          preserveModulesRoot: '.',
+          preserveModulesRoot: './src',
           exports: 'named',
           // 配置打包根目录
           dir: '../mist-vue/es',
@@ -42,7 +42,7 @@ export default defineConfig({
     vueJsx(),
     dts({
       entryRoot: './src',
-      outDir: ['../mist-vue/es/src'],
+      outDir: ['../mist-vue/es'],
       exclude: ['**/_test_/**'],
     }),
     // {

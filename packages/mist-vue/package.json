@@ -2,24 +2,21 @@
   "name": "mist-vue",
   "type": "module",
   "version": "0.0.43-beta.6",
-  "module": "es/src/index.js",
-  "main": "es/src/index.js",
-  "types": "es/src/index.d.ts",
+  "module": "es/index.js",
+  "main": "es/index.js",
+  "types": "es/index.d.ts",
   "keywords": [
     "vue3组件库"
   ],
   "sideEffects": [
-    "es/src/*/style/*",
-    "lib/src/*/style/*"
+    "es/*/style/*"
   ],
   "exports": {
     ".": {
-      "types": "./es/src/index.d.ts",
-      "import": "./es/src/index.js",
-      "require": "./lib/src/index.js"
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js"
     },
-    "./es/src/*": "./es/src/*",
-    "./lib/src/*": "./lib/src/*",
+    "./es/src/*": "./es/*",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },
