@@ -5,18 +5,19 @@ ps: `loading` 插槽优先级高于 `loadingIcon` 属性
 </docs>
 
 <script setup lang="ts">
-import { MButton } from 'mist-vue'
+import { MButton, MIcon } from 'mist-vue'
 </script>
 
 <template>
   <div>
     <MButton type="primary" loading>Loading</MButton>
     <MButton type="primary" loading-icon="circle-notch" loading
-    >Loading</MButton
+    >Loading
+    </MButton
     >
     <MButton type="primary" loading>
       <template #loading>
-        <m-icon style="margin-right: 6px" icon="star" spin />
+        <MIcon style="margin-right: 6px" icon="star" spin/>
       </template>
       Loading
     </MButton>

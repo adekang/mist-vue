@@ -19,7 +19,7 @@ import { MButton } from 'mist-vue'
   <MButton
     type="primary"
     tag="a"
-    href="https://github.com/EricWXY/eric-ui"
+    href="https://github.com/adekang/mist-vue"
     target="_blank"
     rel="noopener noreferrer"
   >

@@ -7,7 +7,7 @@ export * from './button-types.ts'
 // app.use 注册
 // 具名导出
 export const MButton = withInstall(_Button)
-export const ButtonGroup = withInstall(_ButtonGroup)
+export const MButtonGroup = withInstall(_ButtonGroup)
 
 // 默认导出
 export default MButton
