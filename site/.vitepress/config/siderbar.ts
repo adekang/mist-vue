@@ -8,7 +8,12 @@ export function getSidebar(): DefaultTheme.Sidebar {
         items: [{ text: 'Button 按钮', link: '/components/button/' }],
       },
       { text: '导航', items: [] },
-      { text: '反馈', items: [] },
+      {
+        text: '反馈',
+        items: [
+          { text: 'Alert 提示', link: '/components/alter/' },
+        ],
+      },
       {
         text: '数据录入',
         items: [{ text: 'Input 输入框', link: '/components/input/' }],

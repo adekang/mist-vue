@@ -1,0 +1,111 @@
+.m-alert {
+  --m-alert-padding: 8px 16px;
+  --m-alert-border-radius-base: var(--m-border-radius-base);
+  --m-alert-bg-color: var(--m-color-white);
+  --m-alert-title-font-size: 14px;
+  --m-alert-title-font-size-with-desc: 16px;
+  --m-alert-desc-font-size: 14px;
+  --m-alert-text-color: var(--m-text-color-primary);
+  --m-alert-top-margin: 20px;
+  --m-alert-icon-size: 16px;
+  --m-alert-icon-margin: 8px;
+  --m-alert-big-icon-size: 28px;
+  --m-alert-big-icon-margin: 12px;
+}
+
+.m-alert {
+  padding: var(--m-alert-padding);
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: var(--m-alert-border-radius-base);
+  position: relative;
+  background-color: var(--m-alert-bg-color);
+  overflow: hidden;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  transition: opacity var(--m-transition-duration);
+  margin-top: var(--m-alert-top-margin);
+
+  .m-alert__icon {
+    color: var(--m-alert-text-color);
+    font-size: var(--m-alert-icon-size);
+    width: var(--m-alert-icon-size);
+    margin-right: var(--m-alert-icon-margin);
+
+    &.big-icon {
+      font-size: var(--m-alert-big-icon-size);
+      width: var(--m-alert-big-icon-size);
+      margin-right: var(--m-alert-big-icon-margin);
+    }
+  }
+
+  .m-alert__content {
+    color: var(--m-alert-text-color);
+    vertical-align: text-top;
+
+    .m-alert__title {
+      font-size: var(--m-alert-title-font-size);
+      line-height: 24px;
+
+      &.with-desc {
+        font-size: var(--m-alert-title-font-size-with-desc);
+      }
+    }
+
+    .m-alert__description {
+      font-size: var(--m-alert-desc-font-size);
+      margin: 0;
+    }
+
+    .m-alert__close {
+      font-size: var(--m-alert-close-font-size);
+      opacity: 1;
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      cursor: pointer;
+
+      :deep(.m-icon) {
+        vertical-align: top;
+      }
+    }
+
+    &.m-alert__light {
+      .m-alert__close {
+        color: var(--m-text-color-placeholder);
+      }
+    }
+
+    &.m-alert__dark {
+      .m-alert__close {
+        color: var(--m-color-white);
+      }
+    }
+  }
+
+
+  &.text-center {
+    justify-content: center;
+
+    span, p {
+      text-align: center;
+    }
+  }
+}
+
+.m-alert-fade-enter-from,
+.m-alert-fade-leave-to {
+  opacity: 0;
+}
+
+@each $val in success, warning, info, danger {
+  .m-alert__#{$val}.m-alert__light {
+    --m-alert-text-color: var(--m-color-#{$val});
+    --m-alert-bg-color: var(--m-color-#{$val}-light-9);
+  }
+  .m-alert__#{$val}.m-alert__dark {
+    --m-alert-text-color: var(--m-color-white);
+    --m-alert-bg-color: var(--m-color-#{$val});
+  }
+}

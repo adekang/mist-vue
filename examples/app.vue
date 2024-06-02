@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MCollapse, MCollapseItem } from '@mist-vue/components/src'
+import { MAlert, MCollapse, MCollapseItem } from '@mist-vue/components/src'
 import { ref } from 'vue'
 
 const a = ref([1])
@@ -14,4 +14,8 @@ const a = ref([1])
       <div>content2</div>
     </MCollapseItem>
   </MCollapse>
+
+  <hr>
+
+  <MAlert title="title" description="description" type="success" closeable></MAlert>
 </template>
