@@ -1,4 +1,4 @@
-import { withInstall } from '@mist-vue/utils'
+import { withInstall } from '../_utils'
 import _Button from './button.vue'
 import _ButtonGroup from './button-group.vue'
 

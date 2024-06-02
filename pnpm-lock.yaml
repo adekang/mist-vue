@@ -17,9 +17,6 @@ importers:
       '@fortawesome/vue-fontawesome':
         specifier: ^3.0.6
         version: 3.0.6(@fortawesome/fontawesome-svg-core@6.5.2)(vue@3.4.27(typescript@5.4.5))
-      '@mist-vue/utils':
-        specifier: workspace:^
-        version: link:packages/utils
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
@@ -189,9 +186,6 @@ importers:
       '@fortawesome/vue-fontawesome':
         specifier: ^3.0.6
         version: 3.0.6(@fortawesome/fontawesome-svg-core@6.5.2)(vue@3.4.27(typescript@5.4.5))
-      '@mist-vue/utils':
-        specifier: workspace:*
-        version: link:../utils
       '@vitest/coverage-v8':
         specifier: ^1.6.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.12.10)(happy-dom@9.20.3)(jsdom@24.0.0)(less@4.2.0)(sass@1.77.0))
@@ -210,8 +204,6 @@ importers:
         version: 4.17.12
 
   packages/mist-vue: {}
-
-  packages/utils: {}
 
   site:
     dependencies:

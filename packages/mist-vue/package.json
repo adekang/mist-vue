@@ -16,7 +16,7 @@
       "types": "./es/index.d.ts",
       "import": "./es/index.js"
     },
-    "./es/src/*": "./es/*",
+    "./es/*": "./es/*",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },

@@ -43,7 +43,7 @@ export default defineConfig({
     dts({
       entryRoot: './src',
       outDir: ['../mist-vue/es'],
-      exclude: ['**/_test_/**'],
+      exclude: ['**/__test__/**'],
     }),
     // {
     //   // 将所有输出文件中的 .scss 换成 .css

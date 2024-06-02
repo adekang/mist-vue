@@ -23,7 +23,7 @@ export function buildSassStyle() {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     // .pipe(dest(`${pkgPath}/mist-vue/lib/src`))
-    .pipe(dest(`${pkgPath}/mist-vue/es/src`))
+    .pipe(dest(`${pkgPath}/mist-vue/es`))
 }
 
 // less 样式
