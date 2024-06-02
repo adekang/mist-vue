@@ -32,6 +32,7 @@
 // // 属性类型
 // export type ButtonProps = ExtractPropTypes<typeof buttonProps>
 
+import type { ComputedRef, Ref } from 'vue'
 import { type Component } from 'vue'
 
 export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
@@ -72,5 +73,8 @@ export interface ButtonEmits {
 }
 
 export interface ButtonInstance {
-  ref: HTMLButtonElement
+  ref: Ref<HTMLButtonElement | void>
+  disabled: ComputedRef<boolean>
+  size: ComputedRef<ButtonSize | ''>
+  type: ComputedRef<ButtonType | ''>
 }

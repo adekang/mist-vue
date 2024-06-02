@@ -2,7 +2,7 @@
 import { computed, inject, ref } from 'vue'
 import { throttle } from 'lodash-es'
 import MIcon from '../Icon/Icon.vue'
-import type { ButtonEmits, ButtonProps } from './button-types.ts'
+import type { ButtonEmits, ButtonInstance, ButtonProps } from './button-types.ts'
 import { BUTTON_GROUP_CTX_Key } from './contants'
 
 defineOptions({
@@ -35,8 +35,11 @@ const iconStyle = computed(() => ({
 
 const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration)
 
-defineExpose({
+defineExpose<ButtonInstance>({
   ref: _ref,
+  disabled,
+  size,
+  type,
 })
 </script>
 
