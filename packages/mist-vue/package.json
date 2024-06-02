@@ -1,7 +1,7 @@
 {
   "name": "mist-vue",
   "type": "module",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "module": "es/index.js",
   "main": "es/index.js",
   "types": "es/index.d.ts",
