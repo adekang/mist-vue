@@ -32,6 +32,11 @@
     "@fortawesome/vue-fontawesome": "^3.0.6"
   },
   "devDependencies": {
+    "@vue/test-utils": "^2.4.6",
+    "vitest": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "jsdom": "^24.0.0",
+    "@types/lodash-es": "^4.17.12",
     "@adekang/eslint-config": "^0.39.10",
     "@babel/core": "^7.24.5",
     "@babel/plugin-transform-runtime": "^7.24.3",
@@ -49,7 +54,6 @@
     "@types/shelljs": "^0.8.15",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vue/test-utils": "^2.4.6",
     "bumpp": "^9.4.1",
     "eslint": "^8.57.0",
     "fs-extra": "^11.2.0",
@@ -61,7 +65,6 @@
     "happy-dom": "^9.20.3",
     "husky": "^8.0.3",
     "lint-staged": "^13.3.0",
-    "release-it": "^15.11.0",
     "rollup": "^4.17.2",
     "sass": "^1.77.0",
     "shelljs": "^0.8.5",
@@ -69,7 +72,6 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.11",
     "vite-plugin-dts": "^3.9.1",
-    "vitest": "^1.6.0",
     "vue-tsc": "^1.8.25"
   }
 }

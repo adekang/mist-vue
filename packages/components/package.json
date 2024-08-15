@@ -8,22 +8,13 @@
     "build:umd": "vite build --config vite.umd.config.ts",
     "build:style": "vite build --config vite.style.config.ts",
     "build:all": "pnpm run build && pnpm run build:umd && pnpm run build:style",
-    "test": "vitest  --coverage",
+    "test": "vitest  --coverage --environment jsdom",
     "coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "adekang",
   "license": "ISC",
   "dependencies": {
-    "classnames": "^2.4.0",
-    "@vitest/coverage-v8": "^1.6.0",
-    "jsdom": "^24.0.0",
-    "lodash-es": "^4.17.21",
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@fortawesome/vue-fontawesome": "^3.0.6"
-  },
-  "devDependencies": {
-    "@types/lodash-es": "^4.17.12"
+    "classnames": "^2.4.0"
   }
 }
