@@ -1,9 +1,8 @@
-import { beforeAll, describe, expect, test, vi } from 'vitest'
-import type { DOMWrapper } from '@vue/test-utils'
-import { type VueWrapper, mount } from '@vue/test-utils'
+import type { DOMWrapper, mount, type VueWrapper } from '@vue/test-utils'
+import { beforeAll, describe, expect, vi } from 'vitest'
 
-import Collapse from '../collapse.vue'
 import CollapseItem from '../collapse-item.vue'
+import Collapse from '../collapse.vue'
 
 const onChange = vi.fn()
 
@@ -18,7 +17,7 @@ let firstHeader: DOMWrapper<Element>,
   secondContent: DOMWrapper<Element>,
   disabledContent: DOMWrapper<Element>
 
-describe('Collapse.vue', () => {
+describe('collapse.vue', () => {
   beforeAll(() => {
     wrapper = mount(
       () => (
@@ -54,7 +53,7 @@ describe('Collapse.vue', () => {
     disabledContent = contents[2]
   })
 
-  test('测试基础结构以及对应文本', () => {
+  it('测试基础结构以及对应文本', () => {
     // lenght
     expect(headers.length).toBe(3)
     expect(contents.length).toBe(3)
@@ -71,7 +70,7 @@ describe('Collapse.vue', () => {
     expect(secondContent.text()).toBe('content b')
   })
 
-  test('点击标题展开/关闭内容', async () => {
+  it('点击标题展开/关闭内容', async () => {
     // events
     await firstHeader.trigger('click')
     expect(firstContent.isVisible()).toBeFalsy()
@@ -82,13 +81,13 @@ describe('Collapse.vue', () => {
     expect(firstContent.isVisible()).toBeFalsy()
   })
 
-  test('发送正确的事件', () => {
+  it('发送正确的事件', () => {
     expect(onChange).toHaveBeenCalledTimes(2)
     expect(onChange).toHaveBeenCalledWith([])
     expect(onChange).toHaveBeenLastCalledWith(['b'])
   })
 
-  test('disabled 内容', async () => {
+  it('disabled 内容', async () => {
     // disabled
     expect(disabledHeader.classes()).toContain('is-disabled')
     onChange.mockClear()
@@ -97,14 +96,14 @@ describe('Collapse.vue', () => {
     expect(onChange).not.toHaveBeenCalled()
   })
 
-  test('modelValue 变更', async () => {
+  it('modelValue 变更', async () => {
     wrapper.setValue(['b'], 'modelValue')
     await wrapper.vm.$nextTick()
     expect(secondHeader.classes()).toContain('is-active')
     expect(firstHeader.classes()).not.toContain('is-active')
   })
 
-  test('手风琴模式', async () => {
+  it('手风琴模式', async () => {
     wrapper = mount(
       () => (
         <Collapse accordion modelValue={['a']} {...{ onChange }}>
@@ -140,7 +139,7 @@ describe('Collapse.vue', () => {
     expect(secondHeader.classes()).toContain('is-active')
   })
 
-  test('手风琴模式 错误处理', () => {
+  it('手风琴模式 错误处理', () => {
     wrapper = mount(
       () => (
         <Collapse accordion modelValue={['a', 'b']} {...{ onChange }}>

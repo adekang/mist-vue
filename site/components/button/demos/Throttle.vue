@@ -8,10 +8,11 @@ function handleBtnClick() {
 
 <template>
   <p>
-    <MButton @click="handleBtnClick"> with throttle</MButton>
+    <MButton @click="handleBtnClick">
+      with throttle
+    </MButton>
     <MButton :use-throttle="false" @click="handleBtnClick">
       without throttle
-    </MButton
-    >
+    </MButton>
   </p>
 </template>

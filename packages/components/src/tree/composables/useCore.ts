@@ -1,10 +1,10 @@
 import type { Ref } from 'vue'
-import { computed } from 'vue'
 import type { MInnerTreeNode } from '../tree-type'
 import type { IUseCore } from './use-tree-type'
+import { computed } from 'vue'
 
 export function useCore(innerData: Ref<MInnerTreeNode[]>): IUseCore {
-  const getChildren = (node: MInnerTreeNode, recursive = true) => {
+  const getChildren = (node: MInnerTreeNode, recursive = true): any => {
     const result = []
     const startIndex = innerData.value.findIndex(item => item.id === node.id)
 
@@ -33,7 +33,7 @@ export function useCore(innerData: Ref<MInnerTreeNode[]>): IUseCore {
     return result
   })
   // 计算参考线高度
-  const getChildrenExpanded = (node: MInnerTreeNode) => {
+  const getChildrenExpanded = (node: MInnerTreeNode): MInnerTreeNode[] => {
     const result: MInnerTreeNode[] = []
     // 找到node在列表中的索引
     const startIndex = expandedTree.value.findIndex(item => item.id === node.id)
@@ -48,7 +48,7 @@ export function useCore(innerData: Ref<MInnerTreeNode[]>): IUseCore {
     return result
   }
 
-  const getIndex = (node: MInnerTreeNode) => {
+  const getIndex = (node: MInnerTreeNode): number => {
     if (!node)
       return -1
     return innerData.value.findIndex(item => item.id === node.id)

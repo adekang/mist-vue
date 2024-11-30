@@ -10,14 +10,15 @@ import { MButton, MIcon } from 'mist-vue'
 
 <template>
   <div>
-    <MButton type="primary" loading>Loading</MButton>
-    <MButton type="primary" loading-icon="circle-notch" loading
-    >Loading
-    </MButton
-    >
+    <MButton type="primary" loading>
+      Loading
+    </MButton>
+    <MButton type="primary" loading-icon="circle-notch" loading>
+      Loading
+    </MButton>
     <MButton type="primary" loading>
       <template #loading>
-        <MIcon style="margin-right: 6px" icon="star" spin/>
+        <MIcon style="margin-right: 6px" icon="star" spin />
       </template>
       Loading
     </MButton>

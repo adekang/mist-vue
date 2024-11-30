@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, inject, ref } from 'vue'
-import { throttle } from 'lodash-es'
-import MIcon from '../Icon/Icon.vue'
 import type { ButtonEmits, ButtonInstance, ButtonProps } from './button-types.ts'
+import { throttle } from 'lodash-es'
+import { computed, inject, ref } from 'vue'
+import MIcon from '../Icon/Icon.vue'
 import { BUTTON_GROUP_CTX_Key } from './contants'
 
 defineOptions({
@@ -61,17 +61,17 @@ defineExpose<ButtonInstance>({
       'is-loading': loading,
     }"
     @click="(e:MouseEvent) => {
-        console.log('demo useThrottle', useThrottle ? 1 : 0)
+      console.log('demo useThrottle', useThrottle ? 1 : 0)
       return useThrottle ? handleBtnClickThrottle(e) : handleBtnClick(e)
     }"
   >
     <template v-if="loading">
       <slot name="loading">
-        <MIcon class="loading-icon" :icon="loadingIcon ?? 'spinner'" :style="iconStyle" spin size="1x"/>
+        <MIcon class="loading-icon" :icon="loadingIcon ?? 'spinner'" :style="iconStyle" spin size="1x" />
       </slot>
     </template>
-    <MIcon v-if="icon && !loading" :icon="icon" :style="iconStyle" size="1x"/>
-    <slot></slot>
+    <MIcon v-if="icon && !loading" :icon="icon" :style="iconStyle" size="1x" />
+    <slot />
   </component>
 </template>
 

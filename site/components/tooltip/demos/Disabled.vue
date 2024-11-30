@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { MButton, MTooltip } from 'mist-vue'
+import { ref } from 'vue'
 
 const disabled = ref(false)
 </script>
@@ -11,8 +11,8 @@ const disabled = ref(false)
     content="click to close tooltip function"
     placement="bottom"
   >
-    <MButton @click="disabled = !disabled"
-      >click to {{ disabled ? "active" : "close" }} tooltip function</MButton
-    >
+    <MButton @click="disabled = !disabled">
+      click to {{ disabled ? "active" : "close" }} tooltip function
+    </MButton>
   </MTooltip>
 </template>

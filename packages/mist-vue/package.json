@@ -2,9 +2,12 @@
   "name": "mist-vue",
   "type": "module",
   "version": "0.0.44",
-  "module": "es/index.js",
-  "main": "es/index.js",
-  "types": "es/index.d.ts",
+  "author": "adekang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adekang/mist-vue"
+  },
   "keywords": [
     "vue3组件库"
   ],
@@ -20,18 +23,15 @@
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },
+  "main": "es/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
   "files": [
     "dist",
     "es",
     "lib"
   ],
-  "author": "adekang",
-  "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/adekang/mist-vue"
   }
 }

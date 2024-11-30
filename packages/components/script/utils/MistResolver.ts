@@ -1,14 +1,14 @@
 function toKebabCase(str) {
   return str
     // 匹配所有大写字母和单词（包括由非字母字符分隔的）
-    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]|\b)|[A-Z]?[a-z]+\d*|[A-Z]|\d+/g)
     // 转换为小写
     .map(x => x.toLowerCase())
     // 使用短横线连接
     .join('')
 }
 
-function getSideEffects(partialName, options) {
+function getSideEffects(partialName: string) {
   return [
     // "element-plus/lib/theme-chalk/base.css",
     `mist-vue/es/src/${partialName}/style/index.css`,
@@ -16,7 +16,7 @@ function getSideEffects(partialName, options) {
 }
 
 // import 'mist-vue/es/src/button/style/index.css'
-function resolveComponent(name, options) {
+function resolveComponent(name: any, options: any) {
   if (options.exclude && name.match(options.exclude))
     return
   if (!name.match(/^M[A-Z]/))

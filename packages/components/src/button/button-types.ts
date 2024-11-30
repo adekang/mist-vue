@@ -32,8 +32,7 @@
 // // 属性类型
 // export type ButtonProps = ExtractPropTypes<typeof buttonProps>
 
-import type { ComputedRef, Ref } from 'vue'
-import { type Component } from 'vue'
+import type { type Component, ComputedRef, Ref } from 'vue'
 
 export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
 export type NativeType = 'button' | 'submit' | 'reset'

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { type Instance, createPopper } from '@popperjs/core'
-import { type Ref, computed, onUnmounted, ref, watch, watchEffect } from 'vue'
-import { type DebouncedFunc, bind, debounce } from 'lodash-es'
-
 import type { ButtonInstance } from '../button'
-import { useClickOutside } from '../_hooks'
 import type { TooltipEmits, TooltipInstance, TooltipProps } from './types'
+import { createPopper, type Instance } from '@popperjs/core'
+
+import { bind, debounce, type DebouncedFunc } from 'lodash-es'
+import { computed, onUnmounted, type Ref, ref, watch, watchEffect } from 'vue'
+import { useClickOutside } from '../_hooks'
 import useEvenstToTiggerNode from './useEvenstToTiggerNode.ts'
 
 defineOptions({
@@ -218,28 +218,28 @@ defineExpose<TooltipInstance>({
 </script>
 
 <template>
-  <div class="m-tooltip" ref="containerNode" v-on="outerEvents">
+  <div ref="containerNode" class="m-tooltip" v-on="outerEvents">
     <div
-      class="m-tooltip__trigger"
-      ref="_triggerNode"
-      v-on="events"
       v-if="!virtualTriggering"
+      ref="_triggerNode"
+      class="m-tooltip__trigger"
+      v-on="events"
     >
-      <slot></slot>
+      <slot />
     </div>
-    <slot name="default" v-else></slot>
+    <slot v-else name="default" />
 
     <transition :name="transition" @after-leave="destroyPopperInstance">
       <div
-        class="m-tooltip__popper"
-        ref="popperNode"
-        v-on="dropdownEvents"
         v-if="visible"
+        ref="popperNode"
+        class="m-tooltip__popper"
+        v-on="dropdownEvents"
       >
         <slot name="content">
           {{ content }}
         </slot>
-        <div id="arrow" data-popper-arrow></div>
+        <div id="arrow" data-popper-arrow />
       </div>
     </transition>
   </div>

@@ -2,18 +2,18 @@
   "name": "examples",
   "version": "0.0.44",
   "description": "这是一个组件开发演示文档",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vite --port=3000"
-  },
+  "author": "adekang",
+  "license": "ISC",
   "keywords": [
     "examples",
     "vue"
   ],
-  "author": "adekang",
-  "license": "ISC",
-  "devDependencies": {},
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --port=3000"
+  },
   "dependencies": {
     "@mist-vue/components": "workspace:^"
-  }
+  },
+  "devDependencies": {}
 }

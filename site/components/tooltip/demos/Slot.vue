@@ -4,7 +4,9 @@ import { MButton, MTooltip } from 'mist-vue'
 
 <template>
   <MTooltip placement="top">
-    <template #content> multiple lines<br/>second line</template>
+    <template #content>
+      multiple lines<br>second line
+    </template>
     <MButton>Top center</MButton>
   </MTooltip>
 </template>

@@ -27,13 +27,11 @@ Alert 组件提供四种类型，由 `type` 属性指定，为 `success | warnin
 
 <demo src="./demos/Close.vue"></demo>
 
-
 ## 展示图标
 
 通过设置 `show-icon` 属性来显示 Alert 的 icon，这能更有效地向用户展示你的显示意图。
 
 <demo src="./demos/ShowIcon.vue"></demo>
-
 
 ## 文字居中
 
@@ -41,18 +39,15 @@ Alert 组件提供四种类型，由 `type` 属性指定，为 `success | warnin
 
 <demo src="./demos/TextCenter.vue"></demo>
 
-
 ## 文字描述
 
 除了必填的 `title` 属性外，你可以设置 `description` 属性来帮助你更好地介绍，我们称之为辅助性文字。
 
 <demo src="./demos/Desc.vue"></demo>
 
-
 ## 带图标和描述
 
 <demo src="./demos/IconDesc.vue"></demo>
-
 
 ## Alert API
 

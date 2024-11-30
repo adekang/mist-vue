@@ -2,6 +2,9 @@
   "name": "@mist-vue/components",
   "version": "0.0.44",
   "description": "",
+  "author": "adekang",
+  "license": "ISC",
+  "keywords": [],
   "main": "src/index.ts",
   "scripts": {
     "build": "vite build --config vite.es.config.ts",
@@ -11,12 +14,9 @@
     "test": "vitest  --coverage --environment jsdom",
     "coverage": "vitest run --coverage"
   },
-  "keywords": [],
-  "author": "adekang",
-  "license": "ISC",
   "dependencies": {
-    "classnames": "^2.4.0",
     "@popperjs/core": "^2.11.8",
-    "async-validator": "^4.2.5"
+    "async-validator": "^4.2.5",
+    "classnames": "^2.4.0"
   }
 }

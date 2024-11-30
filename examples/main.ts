@@ -1,5 +1,5 @@
-import { createApp } from 'vue'
 import Mist from '@mist-vue/components/src'
+import { createApp } from 'vue'
 import App from './app.vue'
 import '@mist-vue/components/src/styles'
 

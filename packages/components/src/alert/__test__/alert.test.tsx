@@ -1,10 +1,10 @@
-import { describe, expect, it, vi } from 'vitest'
-import { mount } from '@vue/test-utils'
 import type { AlertType } from '../types'
-import Alert from '../alert.vue'
+import { mount } from '@vue/test-utils'
+import { describe, expect, it, vi } from 'vitest'
 import Icon from '../../Icon/Icon.vue'
+import Alert from '../alert.vue'
 
-describe('Alert.vue', () => {
+describe('alert.vue', () => {
   const title = 'Test Alert' as const
   const desc = 'This is a test description' as const
   const closable = true

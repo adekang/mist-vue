@@ -3,7 +3,7 @@ import type { MInnerTreeNode } from '../tree-type'
 import type { IUseCheck, IUseCore } from './use-tree-type'
 
 export function useCheck(innerData: Ref<MInnerTreeNode[]>, { getChildren }: IUseCore): IUseCheck {
-  const toggleCheckedNode = (node: MInnerTreeNode) => {
+  const toggleCheckedNode = (node: MInnerTreeNode): void => {
     //   避免初始化没有node checked  为undefined
     // node.checked = !node.checked
     //  父到子的选中

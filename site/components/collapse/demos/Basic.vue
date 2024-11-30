@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import type { CollapseItemName } from 'mist-vue'
 import { MCollapse, MCollapseItem } from 'mist-vue'
+import { ref } from 'vue'
 
 const activeNames = ref(['1'])
 

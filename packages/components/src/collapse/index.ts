@@ -1,6 +1,6 @@
 import { withInstall } from '../_utils'
-import _Collapse from './collapse.vue'
 import _CollapseItem from './collapse-item.vue'
+import _Collapse from './collapse.vue'
 
 export * from './types'
 

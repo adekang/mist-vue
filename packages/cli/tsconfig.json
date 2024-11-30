@@ -1,8 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "module": "commonjs",
     "lib": [
       // Should target at least ES2016 in Vue 3
       // Support for newer versions of language built-ins are
@@ -12,6 +9,9 @@
       "ES2016",
       "DOM",
       "DOM.Iterable"
-    ]
+    ],
+    "rootDir": "./src",
+    "module": "commonjs",
+    "outDir": "./dist"
   }
 }

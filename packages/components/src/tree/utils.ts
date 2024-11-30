@@ -1,9 +1,6 @@
 import type { MInnerTreeNode, MTreeNode } from './tree-type'
 
-export function generateInnerTree(tree: MTreeNode[],
-  level = 0, // 当前层级
-  path = [] as MInnerTreeNode, // 递归过程的路径
-): MInnerTreeNode[] {
+export function generateInnerTree(tree: MTreeNode[], level = 0, path = [] as unknown as MInnerTreeNode): MInnerTreeNode[] {
   level++
   return tree.reduce((prev, cur) => {
     // 判断cur是否有children,有就递归

@@ -1,14 +1,14 @@
-import { beforeEach, describe, expect, it, test, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { MTooltip } from '..'
-import Tooltip from '../tooltip.vue'
 import { withInstall } from '../../_utils'
+import Tooltip from '../tooltip.vue'
 
 vi.mock('@popperjs/core')
 
 const onVisibleChange = vi.fn()
 
-describe('Tooltip/index.ts', () => {
+describe('tooltip/index.ts', () => {
   // 测试 withInstall 函数是否被正确应用
   it('should be exported with withInstall()', () => {
     expect(MTooltip.install).toBeDefined()
@@ -20,26 +20,26 @@ describe('Tooltip/index.ts', () => {
   })
 
   // 可选：测试 withInstall 是否增强了 Tooltip 组件的功能
-  test('should enhance Tooltip component', () => {
+  it('should enhance Tooltip component', () => {
     const enhancedTooltip = withInstall(Tooltip)
     expect(enhancedTooltip).toBe(MTooltip)
     // 这里可以添加更多测试，确保 withInstall 增强了组件的特定功能
   })
 
   // 可选：如果你的 withInstall 函数有特定的行为或属性，确保它们被正确应用
-  test('should apply specific enhancements', () => {
+  it('should apply specific enhancements', () => {
     const enhancedTooltip = withInstall(Tooltip)
     // 例如，如果你的 withInstall 增加了一个特定的方法或属性
     expect(enhancedTooltip).toHaveProperty('install')
   })
 })
 
-describe('Tooltip.vue', () => {
+describe('tooltip.vue', () => {
   beforeEach(() => {
     vi.useFakeTimers()
     vi.clearAllMocks()
   })
-  test('basic tooltip', async () => {
+  it('basic tooltip', async () => {
     const wrapper = mount(
       () => (
         <div>
@@ -90,7 +90,7 @@ describe('Tooltip.vue', () => {
     wrapper.unmount()
   })
 
-  test('tooltip with hover trigger', async () => {
+  it('tooltip with hover trigger', async () => {
     // ... 省略其他设置
     const wrapper = mount(Tooltip, {
       props: { trigger: 'hover', content: 'test' },
@@ -106,7 +106,7 @@ describe('Tooltip.vue', () => {
   })
 
   // 右键菜单触发的测试
-  test('tooltip with contextmenu trigger', async () => {
+  it('tooltip with contextmenu trigger', async () => {
     // ... 省略其他设置
     const wrapper = mount(Tooltip, {
       props: { trigger: 'contextmenu', content: 'test' },
@@ -119,7 +119,7 @@ describe('Tooltip.vue', () => {
   })
 
   // 手动模式的测试
-  test('tooltip with manual trigger', async () => {
+  it('tooltip with manual trigger', async () => {
     // ... 省略其他设置
     const wrapper = mount(Tooltip, {
       props: { manual: true, content: 'test' },
@@ -134,7 +134,7 @@ describe('Tooltip.vue', () => {
   })
 
   // 禁用状态的测试
-  test('disabled tooltip', async () => {
+  it('disabled tooltip', async () => {
     // ... 省略其他设置
     const wrapper = mount(Tooltip, {
       props: { disabled: true, content: 'test' },
@@ -146,7 +146,7 @@ describe('Tooltip.vue', () => {
   })
 
   // 虚拟触发节点的测试
-  test('tooltip with virtual trigger node', async () => {
+  it('tooltip with virtual trigger node', async () => {
     // ... 省略其他设置
     const virtualRef = document.createElement('div')
     const wrapper = mount(Tooltip, {

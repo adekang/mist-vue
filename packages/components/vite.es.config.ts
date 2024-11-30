@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
@@ -14,7 +14,8 @@ export default defineConfig({
     rollupOptions: {
       // 忽略打包vue文件
       external: [
-        'vue', /\.less|\.scss/,
+        'vue',
+        /\.less|\.scss/,
         '@mist-vue/utils',
         'lodash-es',
         '@fortawesome/fontawesome-svg-core',

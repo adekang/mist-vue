@@ -2,8 +2,8 @@
 
 ```vue
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useClassnames } from '_utils'
+import { ref } from 'vue'
 
 const { c, cm, ce } = useClassnames('button')
 const testRef = ref(false)
@@ -11,7 +11,7 @@ function handleClick() {
   testRef.value = !testRef.value
 }
 
-//m-button--primary
+// m-button--primary
 // Block m-button
 // Element __
 // Modifier --lg
@@ -25,5 +25,4 @@ function handleClick() {
     </button>
   </div>
 </template>
-
 ```

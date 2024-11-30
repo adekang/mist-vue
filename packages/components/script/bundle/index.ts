@@ -1,9 +1,9 @@
 import { dest, parallel, series, src } from 'gulp'
 import autoprefixer from 'gulp-autoprefixer'
-import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
-import { componentPath, pkgPath } from '../utils/paths'
+import dartSass from 'sass'
 import delPath from '../utils/del'
+import { componentPath, pkgPath } from '../utils/paths'
 import run from '../utils/run'
 
 // import less from "gulp-less";

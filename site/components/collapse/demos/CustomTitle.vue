@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { MCollapse, MCollapseItem, MIcon } from 'mist-vue'
+import { ref } from 'vue'
 
 const activeNames = ref(['1'])
 </script>
@@ -10,7 +10,7 @@ const activeNames = ref(['1'])
     <MCollapseItem name="1">
       <template #title>
         <span style="color: var(--m-color-danger)"> Consistency </span>
-        <MIcon icon="question-circle"/>
+        <MIcon icon="question-circle" />
       </template>
       <div>
         Consistent with real life: in line with the process and logic of real

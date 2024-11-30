@@ -17,5 +17,5 @@ const a = ref([1])
 
   <hr>
 
-  <MAlert title="title" description="description" type="success" closeable></MAlert>
+  <MAlert title="title" description="description" type="success" closeable />
 </template>

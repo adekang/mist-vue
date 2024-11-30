@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { provide, reactive, toRef } from 'vue'
 import type { ButtonGroupProps } from './button-types.ts'
+import { provide, reactive, toRef } from 'vue'
 import { BUTTON_GROUP_CTX_Key } from './contants'
 
 defineOptions({
@@ -17,6 +17,6 @@ provide(BUTTON_GROUP_CTX_Key, reactive({
 
 <template>
   <div class="m-button-group">
-    <slot></slot>
+    <slot />
   </div>
 </template>

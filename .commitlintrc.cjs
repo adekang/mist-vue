@@ -1,6 +1,6 @@
 module.exports = {
-    extends: ["@commitlint/config-conventional"]
-};
+  extends: ['@commitlint/config-conventional'],
+}
 
 /*
 type：用于说明 commit 的类型，被指定在 commitlint.config.js 的 type-enum

@@ -15,7 +15,9 @@ import { MButton } from 'mist-vue'
 
 <template>
   <MButton>button</MButton>
-  <MButton tag="div" role="button" tabindex="0">div</MButton>
+  <MButton tag="div" role="button" tabindex="0">
+    div
+  </MButton>
   <MButton
     type="primary"
     tag="a"

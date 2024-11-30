@@ -1,17 +1,17 @@
-import { describe, expect, it, test, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { describe, expect, it, vi } from 'vitest'
 
 import Icon from '../../Icon/Icon.vue'
-import Button from '../button.vue'
 import ButtonGroup from '../button-group.vue'
+import Button from '../button.vue'
 
-describe('Button.vue', () => {
+describe('button.vue', () => {
   const onClick = vi.fn()
-  test('basic button', async () => {
+  it('basic button', async () => {
     const wrapper = mount(() => (
       <Button type="primary" {...{ onClick }}>
-    button content
-    </Button>
+        button content
+      </Button>
     ))
 
     // class
@@ -25,11 +25,11 @@ describe('Button.vue', () => {
     expect(onClick).toHaveBeenCalledOnce()
   })
 
-  test('disabled button', async () => {
+  it('disabled button', async () => {
     const wrapper = mount(() => (
       <Button disabled {...{ onClick }}>
-    disabled button
-    </Button>
+        disabled button
+      </Button>
     ))
 
     // class
@@ -45,7 +45,7 @@ describe('Button.vue', () => {
     expect(wrapper.emitted('click')).toBeUndefined()
   })
 
-  test('loading button', () => {
+  it('loading button', () => {
     const wrapper = mount(Button, {
       props: {
         loading: true,
@@ -75,7 +75,7 @@ describe('Button.vue', () => {
     expect(iconElement.attributes('icon')).toBe('spinner')
   })
 
-  test('icon button', () => {
+  it('icon button', () => {
     const wrapper = mount(Button, {
       props: {
         icon: 'arrow-up',
@@ -194,26 +194,26 @@ describe('Button.vue', () => {
   // });
 })
 
-describe('ButtonGroup.vue', () => {
-  test('basic button group', async () => {
+describe('buttonGroup.vue', () => {
+  it('basic button group', async () => {
     const wrapper = mount(() => (
       <ButtonGroup>
         <Button>button 1</Button>
-    <Button>button 2</Button>
-    </ButtonGroup>
+        <Button>button 2</Button>
+      </ButtonGroup>
     ))
 
     expect(wrapper.classes()).toContain('m-button-group')
   })
 
-  test('button group size', () => {
+  it('button group size', () => {
     const sizes = ['large', 'default', 'small']
     sizes.forEach((size) => {
       const wrapper = mount(() => (
         <ButtonGroup size={size as any}>
           <Button>button 1</Button>
-      <Button>button 2</Button>
-      </ButtonGroup>
+          <Button>button 2</Button>
+        </ButtonGroup>
       ))
 
       const buttonWrapper = wrapper.findComponent(Button)
@@ -221,14 +221,14 @@ describe('ButtonGroup.vue', () => {
     })
   })
 
-  test('button group type', () => {
+  it('button group type', () => {
     const types = ['primary', 'success', 'warning', 'danger', 'info']
     types.forEach((type) => {
       const wrapper = mount(() => (
         <ButtonGroup type={type as any}>
           <Button>button 1</Button>
-      <Button>button 2</Button>
-      </ButtonGroup>
+          <Button>button 2</Button>
+        </ButtonGroup>
       ))
 
       const buttonWrapper = wrapper.findComponent(Button)
@@ -236,12 +236,12 @@ describe('ButtonGroup.vue', () => {
     })
   })
 
-  test('button group disabled', () => {
+  it('button group disabled', () => {
     const wrapper = mount(() => (
       <ButtonGroup disabled>
-      <Button>button 1</Button>
-    <Button>button 2</Button>
-    </ButtonGroup>
+        <Button>button 1</Button>
+        <Button>button 2</Button>
+      </ButtonGroup>
     ))
 
     const buttonWrapper = wrapper.findComponent(Button)

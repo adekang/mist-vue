@@ -1,7 +1,7 @@
-import { defineConfig } from 'vitepress'
 import { vitepressDemo } from 'vite-plugin-vitepress-demo'
-import { getSidebar } from './config/siderbar'
+import { defineConfig } from 'vitepress'
 import { getNav } from './config/nav'
+import { getSidebar } from './config/siderbar'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({

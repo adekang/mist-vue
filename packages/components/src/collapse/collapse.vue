@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { CollapseEmits, CollapseItemName, CollapseProps } from './types'
 import { provide, ref, watch, watchEffect } from 'vue'
 import { debugWarn } from '../_utils'
-import type { CollapseEmits, CollapseItemName, CollapseProps } from './types'
 import { COLLAPSE_CTX_KEY } from './constants.ts'
 
 defineOptions({
@@ -55,7 +55,7 @@ provide(COLLAPSE_CTX_KEY, {
 
 <template>
   <div class="m-collapse">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

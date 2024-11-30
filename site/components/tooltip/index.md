@@ -28,7 +28,6 @@ todo: 目前只是做了简单封装，待完善(effect 部分)
 
 <demo src="./demos/Disabled.vue"></demo>
 
-
 ## Tooltip API
 
 ### Props

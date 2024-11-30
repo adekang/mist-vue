@@ -30,9 +30,9 @@ export async function onCreate(args = { type: '' }): Promise<any> {
   if (!CREATE_TYPES.includes(type)) {
     console.log(
       red(
-                `当前类型仅支持：${CREATE_TYPES.join(
-                    ', ',
-                )}，您输入的是："${type}", 请重新选择！`,
+        `当前类型仅支持：${CREATE_TYPES.join(
+          ', ',
+        )}，您输入的是："${type}", 请重新选择！`,
       ),
     )
 
@@ -88,5 +88,6 @@ export async function onCreate(args = { type: '' }): Promise<any> {
     }
   }
   catch (error) {
+    console.error(red('创建失败：'), error)
   }
 }

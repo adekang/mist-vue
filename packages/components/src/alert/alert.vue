@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
-import MIcon from '../Icon/Icon.vue'
-import { typeIconMap } from '../_utils'
 import type { AlertEmits, AlertInstance, AlertProps } from './types.ts'
+import { computed, ref } from 'vue'
+import { typeIconMap } from '../_utils'
+import MIcon from '../Icon/Icon.vue'
 
 defineOptions({
   name: 'MAlert',
@@ -63,8 +63,8 @@ defineExpose<AlertInstance>({
         <p class="m-alert__description">
           <slot>{{ description }}</slot>
         </p>
-        <div class="m-alert__close" v-if="closable">
-          <MIcon @click.stop="close" icon="xmark"/>
+        <div v-if="closable" class="m-alert__close">
+          <MIcon icon="xmark" @click.stop="close" />
         </div>
       </div>
     </div>

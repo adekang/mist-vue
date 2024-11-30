@@ -8,7 +8,7 @@ function handleClose() {
 
 <template>
   <div class="basic block">
-    <MAlert title="Unclosable alert" type="success" :closable="false"/>
-    <MAlert title="Alert with callback" type="warning" @close="handleClose"/>
+    <MAlert title="Unclosable alert" type="success" :closable="false" />
+    <MAlert title="Alert with callback" type="warning" @close="handleClose" />
   </div>
 </template>

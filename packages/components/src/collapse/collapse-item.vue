@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { CollapseItemProps } from './types'
 import { computed, inject } from 'vue'
 import MIcon from '../Icon/Icon.vue'
-import type { CollapseItemProps } from './types'
 import { COLLAPSE_CTX_KEY } from './constants.ts'
 import transitionEvents from './transitionEvents.ts'
 
@@ -31,8 +31,8 @@ function handleClick() {
     }"
   >
     <div
-      class="m-collapse-item__header"
       :id="`item-headm-${name}`"
+      class="m-collapse-item__header"
       :class="{
         'is-disabled': disabled,
         'is-active': isActive,
@@ -44,12 +44,12 @@ function handleClick() {
           {{ title }}
         </slot>
       </span>
-      <MIcon icon="angle-right" class="header-angle"/>
+      <MIcon icon="angle-right" class="header-angle" />
     </div>
     <transition name="slide" v-on="transitionEvents">
-      <div class="m-collapse-item__wapper" v-show="isActive">
-        <div class="m-collapse-item__content" :id="`item-content-${name}`">
-          <slot></slot>
+      <div v-show="isActive" class="m-collapse-item__wapper">
+        <div :id="`item-content-${name}`" class="m-collapse-item__content">
+          <slot />
         </div>
       </div>
     </transition>

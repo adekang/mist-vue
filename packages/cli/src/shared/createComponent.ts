@@ -1,14 +1,14 @@
-import { resolve } from 'node:path'
 import type { WriteFileOptions } from 'fs-extra'
-import { lightBlue, lightGreen } from 'kolorist'
+import { resolve } from 'node:path'
 import { ensureDirSync, writeFileSync } from 'fs-extra'
-import genCoreTemplate from '../template/core'
+import { lightBlue, lightGreen } from 'kolorist'
 import genIndexTemplate from '../template'
-import genTestTemplate from '../template/testTemp'
-import genTypesTemplate from '../template/types'
-import genStyleTemplate from '../template/styleTemp'
+import genCoreTemplate from '../template/core'
 import genBaseStyleTemplate from '../template/styleBaseTemp'
 import genConfigStyleTemplate from '../template/styleConfigTemp'
+import genStyleTemplate from '../template/styleTemp'
+import genTestTemplate from '../template/testTemp'
+import genTypesTemplate from '../template/types'
 
 export interface ComponentMeta {
   name: string

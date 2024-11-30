@@ -49,7 +49,9 @@ import { MButton, MTooltip } from 'mist-vue'
         content="Left Center prompts info"
         placement="left"
       >
-        <MButton class="mt-3 mb-3">left</MButton>
+        <MButton class="mt-3 mb-3">
+          left
+        </MButton>
       </MTooltip>
       <MTooltip
         class="box-item"

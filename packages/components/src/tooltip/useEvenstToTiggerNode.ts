@@ -1,20 +1,20 @@
-import { each, isElement } from 'lodash-es'
-import { onMounted, onUnmounted, watch } from 'vue'
 import type { ComputedRef, Ref, WatchStopHandle } from 'vue'
 import type { TooltipProps } from './types'
+import { each, isElement } from 'lodash-es'
+import { onMounted, onUnmounted, watch } from 'vue'
 
 export function useEvenstToTiggerNode(
   props: TooltipProps & { virtualTriggering?: boolean },
   triggerNode: ComputedRef<HTMLElement | undefined>,
   events: Ref<Record<string, EventListener>>,
   closeMethod: () => void,
-) {
+): void {
   let watchEventsStopHandle: WatchStopHandle | void
   let watchTriggerNodeStopHandle: WatchStopHandle | void
 
   const _eventHandleMap = new Map()
 
-  const _bindEventToVirtualTiggerNode = () => {
+  const _bindEventToVirtualTiggerNode = (): void => {
     const el = triggerNode.value
     isElement(el)
     && each(events.value, (fn, event) => {
@@ -22,7 +22,7 @@ export function useEvenstToTiggerNode(
       el?.addEventListener(event as keyof HTMLElementEventMap, fn)
     })
   }
-  const _unbindEventToVirtualTiggerNode = () => {
+  const _unbindEventToVirtualTiggerNode = (): void => {
     const el = triggerNode.value
     isElement(el)
     && each(

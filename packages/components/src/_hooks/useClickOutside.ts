@@ -1,4 +1,4 @@
-import { type Ref } from 'vue'
+import type { Ref } from 'vue'
 import useEventListener from './useEventListener'
 
 export default function useClickOutside(

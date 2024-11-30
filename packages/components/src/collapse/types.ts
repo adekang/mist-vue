@@ -15,7 +15,7 @@ export interface CollapseItemProps {
 
 export interface CollapseContext {
   activeNames: Ref<CollapseItemName[]>
-  handleItemClick(name: CollapseItemName): void
+  handleItemClick: (name: CollapseItemName) => void
 }
 
 export interface CollapseEmits {
