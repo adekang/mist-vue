@@ -4,8 +4,6 @@ import { MTooltip } from '..'
 import { withInstall } from '../../_utils'
 import Tooltip from '../tooltip.vue'
 
-vi.mock('@popperjs/core')
-
 const onVisibleChange = vi.fn()
 
 describe('tooltip/index.ts', () => {

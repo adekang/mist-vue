@@ -16,8 +16,8 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
     "async-validator": "^4.2.5",
-    "classnames": "^2.4.0"
+    "classnames": "^2.4.0",
+    "@floating-ui/vue": "^1.1.5"
   }
 }

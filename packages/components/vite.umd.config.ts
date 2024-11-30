@@ -25,4 +25,11 @@ export default defineConfig({
       name: 'MistUI',
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern',
+      },
+    },
+  },
 })

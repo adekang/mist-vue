@@ -4,7 +4,6 @@ export default linter({
   vue: true,
   typescript: true,
   rules: {
-    'no-console': 'off',
     'ts/explicit-function-return-type': 'off',
     'vue/valid-v-slot': 'off',
   },

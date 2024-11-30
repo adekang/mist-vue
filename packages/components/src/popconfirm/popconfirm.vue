@@ -65,5 +65,9 @@ function cancel(e: MouseEvent) {
         </div>
       </div>
     </template>
+
+    <template v-if="$slots.default" #default>
+      <slot name="default" />
+    </template>
   </MTooltip>
 </template>

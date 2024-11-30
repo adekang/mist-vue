@@ -1,19 +1,21 @@
-import type { Options, Placement } from '@popperjs/core'
+import type { Placement, Strategy } from '@floating-ui/vue'
 
 export interface TooltipProps {
   content?: string
   trigger?: 'hover' | 'click' | 'contextmenu'
   placement?: Placement
+  strategy?: Strategy
   manual?: boolean
   disabled?: boolean
-  popperOptions?: Partial<Options>
   transition?: string
   showTimeout?: number
   hideTimeout?: number
+  showArrow?: boolean
 }
 
 export interface TooltipEmits {
   (e: 'visibleChange', value: boolean): void
+
   (e: 'clickOutside'): void
 }
 

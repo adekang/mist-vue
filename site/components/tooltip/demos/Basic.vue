@@ -119,7 +119,6 @@ import { MButton, MTooltip } from 'mist-vue'
 }
 
 .tooltip-base-box .box-item {
-  width: 110px;
-  margin-top: 10px;
+  margin: 10px;
 }
 </style>

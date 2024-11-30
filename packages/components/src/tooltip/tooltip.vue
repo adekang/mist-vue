@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import type { CSSProperties, Ref } from 'vue'
 import type { ButtonInstance } from '../button'
 import type { TooltipEmits, TooltipInstance, TooltipProps } from './types'
-import { createPopper, type Instance } from '@popperjs/core'
+import { arrow, computePosition, flip, offset, shift } from '@floating-ui/vue'
 
 import { bind, debounce, type DebouncedFunc } from 'lodash-es'
-import { computed, onUnmounted, type Ref, ref, watch, watchEffect } from 'vue'
+import { computed, ref, watch, watchEffect } from 'vue'
 import { useClickOutside } from '../_hooks'
 import useEvenstToTiggerNode from './useEvenstToTiggerNode.ts'
 
@@ -14,9 +15,11 @@ defineOptions({
 const props = withDefaults(defineProps<_TooltipProps>(), {
   placement: 'bottom',
   trigger: 'hover',
+  strategy: 'absolute',
   transition: 'fade',
   showTimeout: 0,
   hideTimeout: 200,
+  showArrow: true,
 })
 
 const emits = defineEmits<TooltipEmits>()
@@ -34,12 +37,20 @@ const dropdownEvents: Ref<Record<string, EventListener>> = ref({})
 
 const containerNode = ref<HTMLElement>()
 const popperNode = ref<HTMLElement>()
+const arrowRef = ref<HTMLElement>()
 const _triggerNode = ref<HTMLElement>()
+const floatingStyles = ref<CSSProperties>({
+  position: 'absolute',
+  left: '0',
+  top: '0',
+})
+const arrowStyles = ref<CSSProperties>({})
+const placement = ref(props.placement)
 
 const triggerNode = computed(() => {
   if (props.virtualTriggering) {
     return (
-    // @tips any 为了 fix 一个初始设计上的小失误 （后续重构 "虚拟目标节点" 时解决）
+      // @tips any 为了 fix 一个初始设计上的小失误 （后续重构 "虚拟目标节点" 时解决）
       ((props.virtualRef as ButtonInstance)?.ref as any)
       ?? (props.virtualRef as HTMLElement)
       ?? _triggerNode.value
@@ -49,16 +60,9 @@ const triggerNode = computed(() => {
 })
 
 const popperOptions = computed(() => ({
+  strategy: props.strategy,
   placement: props.placement,
-  modifiers: [
-    {
-      name: 'offset',
-      options: {
-        offset: [0, 9],
-      },
-    },
-  ],
-  ...props.popperOptions,
+  middleware: [shift(), flip(), offset(10), arrow(({ element: arrowRef }))],
 }))
 
 const openDelay = computed(() =>
@@ -115,17 +119,10 @@ function attachEvents() {
   triggerStrategyMap.get(props.trigger)?.()
 }
 
-let popperInstance: null | Instance
-function destroyPopperInstance() {
-  popperInstance?.destroy()
-  popperInstance = null
-}
-
 function resetEvents() {
   events.value = {}
   outerEvents.value = {}
   dropdownEvents.value = {}
-
   attachEvents()
 }
 
@@ -146,18 +143,40 @@ useClickOutside(containerNode, () => {
   visible.value && closeFinal()
 })
 
+async function updatePosition() {
+  const { x, y, placement: place, middlewareData, strategy } = await computePosition(
+    triggerNode.value,
+    popperNode.value,
+    popperOptions.value,
+  )
+  placement.value = place
+  floatingStyles.value = {
+    position: strategy,
+    left: `${x}px`,
+    top: `${y}px`,
+  }
+  if (!props.showArrow)
+    return
+  const { arrow } = middlewareData
+  arrowStyles.value = {
+    left: `${arrow?.x}px`,
+    top: `${arrow?.y}px`,
+  }
+}
+
 watch(
   visible,
   (val) => {
-    if (!val)
+    if (!val) {
+      window.onresize = null
+      window.onscroll = null
       return
-
+    }
     if (triggerNode.value && popperNode.value) {
-      popperInstance = createPopper(
-        triggerNode.value,
-        popperNode.value,
-        popperOptions.value,
-      )
+      updatePosition()
+      // 这里注意应该还要做一下debounce的处理
+      window.onresize = debounce(updatePosition, 250)
+      window.onscroll = debounce(updatePosition, 250)
     }
   },
   { flush: 'post' },
@@ -207,10 +226,6 @@ useEvenstToTiggerNode(props, triggerNode, events, () => {
   setVisible(false)
 })
 
-onUnmounted(() => {
-  destroyPopperInstance()
-})
-
 defineExpose<TooltipInstance>({
   show,
   hide,
@@ -229,17 +244,19 @@ defineExpose<TooltipInstance>({
     </div>
     <slot v-else name="default" />
 
-    <transition :name="transition" @after-leave="destroyPopperInstance">
+    <transition :name="transition">
       <div
         v-if="visible"
         ref="popperNode"
+        :data-popper-placement="placement"
+        :style="floatingStyles"
         class="m-tooltip__popper"
         v-on="dropdownEvents"
       >
         <slot name="content">
           {{ content }}
         </slot>
-        <div id="arrow" data-popper-arrow />
+        <div v-if="showArrow" id="arrow" ref="arrowRef" data-popper-arrow :style="arrowStyles" />
       </div>
     </transition>
   </div>

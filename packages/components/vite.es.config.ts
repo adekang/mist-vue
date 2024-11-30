@@ -21,6 +21,7 @@ export default defineConfig({
         '@fortawesome/fontawesome-svg-core',
         '@fortawesome/free-solid-svg-icons',
         '@fortawesome/vue-fontawesome',
+        '@floating-ui/vue',
       ],
       output: [
         {
@@ -64,4 +65,11 @@ export default defineConfig({
     //   },
     // },
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern',
+      },
+    },
+  },
 })
