@@ -12,7 +12,7 @@
 //  @include button-base.button-variant(button-config.$pseudo, true);
 //}
 
-@import '../../style/index.scss';
+@use '../../style/index.scss';
 .m-button-group {
   --m-button-group-border-color: var(--m-border-color-lighter);
 }

@@ -9,6 +9,7 @@ export function getSidebar(): DefaultTheme.Sidebar {
           { text: 'Button 按钮', link: '/components/button/' },
           { text: 'Collapse 折叠面板', link: '/components/collapse/' },
           { text: 'Tooltip 提示', link: '/components/tooltip/' },
+          { text: 'Popconfirm 弹出确认', link: '/components/popconfirm/' },
         ],
       },
       { text: '导航', items: [] },

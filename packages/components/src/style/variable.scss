@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $colors: (
   "primary": #409eff,
   "success": #67c23a,
@@ -39,11 +41,11 @@ $colors: (
 
     @for $i from 3 through 9 {
       $light-color-name: "--m-color-#{$val}-light-#{$i}";
-      #{$light-color-name}: mix(#fff, $color, $i * 10%);
+      #{$light-color-name}: color.mix(#fff, $color, $i * 10%);
     }
 
     $dark-color-name: "--m-color-#{$val}-dark-2";
-    #{$dark-color-name}: mix(#000, $color, 20%);
+    #{$dark-color-name}: color.mix(#000, $color, 20%);
   }
   /* border */
   --m-border-width: 1px;

@@ -20,7 +20,7 @@ export function removeDist() {
 export function buildSassStyle() {
   console.log('打包sass样式ing...')
   return src(`${componentPath}/src/**/style/index.scss`)
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({}).on('error', sass.logError))
     .pipe(autoprefixer())
     // .pipe(dest(`${pkgPath}/mist-vue/lib/src`))
     .pipe(dest(`${pkgPath}/mist-vue/es`))
