@@ -5,7 +5,7 @@ describe('error', () => {
   it('throwError should be worked', () => {
     expect(() => {
       throwError('scope', 'msg')
-    }).toThrowError('[scope]:msg')
+    }).toThrowError('[scope] : msg')
   })
   it('debugWarn should be worked', () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
@@ -14,7 +14,7 @@ describe('error', () => {
     expect(warn.mock.calls).toMatchInlineSnapshot(`
       [
         [
-          [ErUIError: [scope]:msg],
+          [MError: [scope] : msg],
         ],
         [
           [SyntaxError: custom error],

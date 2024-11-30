@@ -124,7 +124,7 @@ describe('button.vue', () => {
     ['loading', 'is-loading'],
   ])(
     'should has the correct class when prop %s is set to true',
-    (prop, className) => {
+    (prop: any, className: any) => {
       const wrapper = mount(Button, {
         props: { [prop]: true },
         global: {
@@ -147,7 +147,7 @@ describe('button.vue', () => {
   it.each([
     ['withoutThrottle', false],
     ['withThrottle', true],
-  ])('emits click event %s', async (_, useThrottle) => {
+  ])('emits click event %s', async (_: any, useThrottle: any) => {
     console.log('useThrottle', useThrottle)
     const clickSpy = vi.fn()
     const wrapper = mount(Button, {
