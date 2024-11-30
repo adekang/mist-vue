@@ -60,4 +60,3 @@ next:
 | Name      | Description                                     |
 | --------- | ----------------------------------------------- |
 | default   | 默认插槽， 用于触发 Popconfirm 显示的 HTML 元素 |
-| reference | 同上，（default 别名）                          |
