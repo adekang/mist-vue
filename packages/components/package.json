@@ -16,8 +16,8 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@floating-ui/vue": "^1.1.5",
     "async-validator": "^4.2.5",
-    "classnames": "^2.4.0",
-    "@floating-ui/vue": "^1.1.5"
+    "classnames": "^2.5.1"
   }
 }
