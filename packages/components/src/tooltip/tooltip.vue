@@ -144,23 +144,25 @@ useClickOutside(containerNode, () => {
 })
 
 async function updatePosition() {
-  const { x, y, placement: place, middlewareData, strategy } = await computePosition(
-    triggerNode.value,
-    popperNode.value,
-    popperOptions.value,
-  )
-  placement.value = place
-  floatingStyles.value = {
-    position: strategy,
-    left: `${x}px`,
-    top: `${y}px`,
-  }
-  if (!props.showArrow)
-    return
-  const { arrow } = middlewareData
-  arrowStyles.value = {
-    left: `${arrow?.x}px`,
-    top: `${arrow?.y}px`,
+  if (triggerNode.value && popperNode.value) {
+    const { x, y, placement: place, middlewareData, strategy } = await computePosition(
+      triggerNode.value,
+      popperNode.value,
+      popperOptions.value,
+    )
+    placement.value = place
+    floatingStyles.value = {
+      position: strategy,
+      left: `${x}px`,
+      top: `${y}px`,
+    }
+    if (!props.showArrow)
+      return
+    const { arrow } = middlewareData
+    arrowStyles.value = {
+      left: `${arrow?.x}px`,
+      top: `${arrow?.y}px`,
+    }
   }
 }
 
@@ -172,12 +174,10 @@ watch(
       window.onscroll = null
       return
     }
-    if (triggerNode.value && popperNode.value) {
-      updatePosition()
-      // 这里注意应该还要做一下debounce的处理
-      window.onresize = debounce(updatePosition, 250)
-      window.onscroll = debounce(updatePosition, 250)
-    }
+    updatePosition()
+    // 这里注意应该还要做一下debounce的处理
+    window.onresize = debounce(updatePosition, 250)
+    window.onscroll = debounce(updatePosition, 250)
   },
   { flush: 'post' },
 )
