@@ -1,9 +1,9 @@
-function toKebabCase(str) {
+function toKebabCase(str: any) {
   return str
     // 匹配所有大写字母和单词（包括由非字母字符分隔的）
     .match(/[A-Z]{2,}(?=[A-Z][a-z]|\b)|[A-Z]?[a-z]+\d*|[A-Z]|\d+/g)
     // 转换为小写
-    .map(x => x.toLowerCase())
+    .map((x: any) => x.toLowerCase())
     // 使用短横线连接
     .join('')
 }
@@ -26,12 +26,12 @@ function resolveComponent(name: any, options: any) {
     // from: `mist-vue/es/src/${partialName}`,
     name,
     from: 'mist-vue',
-    sideEffects: getSideEffects(partialName, options),
+    sideEffects: getSideEffects(partialName),
   }
 }
 
 function MistResolver(options = {}) {
-  let optionsResolved
+  let optionsResolved: any
 
   async function resolveOptions() {
     if (optionsResolved)
@@ -51,7 +51,7 @@ function MistResolver(options = {}) {
   return [
     {
       type: 'component',
-      resolve: async (name) => {
+      resolve: async (name: string) => {
         console.log('name::', name)
         if (name.startsWith('M')) {
           const options2 = await resolveOptions()
