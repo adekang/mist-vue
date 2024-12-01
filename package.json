@@ -24,7 +24,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "lodash-es": "^4.17.21",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "@floating-ui/vue": "^1.1.5"
+
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.11.2",

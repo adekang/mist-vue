@@ -20,4 +20,5 @@ export default defineConfig({
     nav: getNav(),
     socialLinks: [{ icon: 'github', link: 'https://github.com/adekang/mist-vue' }],
   },
+
 })
